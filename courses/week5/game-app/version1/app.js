@@ -1,14 +1,14 @@
 console.log('Start game')
 
-const GamePosibility = {
+var GamePosibility = {
     rock: 'rock',
     paper: 'paper',
     scissors: 'scissors'
 }
-const possibilities = [GamePosibility.rock, GamePosibility.paper, GamePosibility.scissors];
+var possibilities = [GamePosibility.rock, GamePosibility.paper, GamePosibility.scissors];
 
-const userIndex = Math.floor(Math.random() * possibilities.length);
-const computerIndex = Math.floor(Math.random() * possibilities.length);
+var userIndex = Math.floor(Math.random() * possibilities.length);
+var computerIndex = Math.floor(Math.random() * possibilities.length);
 
 userChoice = possibilities[userIndex];
 computerChoise = possibilities[computerIndex]
