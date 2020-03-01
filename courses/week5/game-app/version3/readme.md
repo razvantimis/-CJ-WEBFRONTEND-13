@@ -1,1 +1,1 @@
-We will refactor the todo app with functions
+What is a Closure?

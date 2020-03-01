@@ -1,1 +1,2 @@
-We will create todo app with basic js knowledge
+Questions:
+- Do we have duplicate of code?
