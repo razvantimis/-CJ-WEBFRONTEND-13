@@ -1,0 +1,1 @@
+We will refactor the todo app with functions
