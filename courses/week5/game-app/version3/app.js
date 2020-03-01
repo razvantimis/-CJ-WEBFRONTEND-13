@@ -1,8 +1,6 @@
 console.log('Start game')
 
 function game() {
-    console.log('Start game')
-
     const GamePosibility = {
         rock: 'rock',
         paper: 'paper',
@@ -47,10 +45,12 @@ function game() {
         }
         return winner;
     }
+
     let score = {
         user: 0,
         computer: 0,
     }
+
     function play() {
         const computerChoise = getRandomChoice(possibilities);
         const userChoice = getRandomChoice(possibilities);
@@ -66,6 +66,7 @@ function game() {
             score.computer += 1;
         }
     }
+
     for (let index = 0; index < 100; index++) {
         play();
     }
