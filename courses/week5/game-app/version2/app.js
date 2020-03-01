@@ -13,7 +13,7 @@ function getRandomChoice(possibilities) {
 }
 
 function getWinner(userChoice, computerChoise) {
-    if(userChoice === computerChoise){
+    if (userChoice === computerChoise) {
         return 'Its a draw'
     }
     switch (userChoice) {
@@ -44,13 +44,14 @@ function getWinner(userChoice, computerChoise) {
     }
     return winner;
 }
+
 function play() {
     const computerChoise = getRandomChoice(possibilities);
     const userChoice = getRandomChoice(possibilities);
 
     console.log('Computer choice:', computerChoise);
     console.log('User choice:', userChoice);
-  
+
     console.log(getWinner(userChoice, computerChoise))
 
 }

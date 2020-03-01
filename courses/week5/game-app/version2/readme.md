@@ -1,1 +1,1 @@
-We will refactor the todo app with functions
+We will refactor the game app with functions
