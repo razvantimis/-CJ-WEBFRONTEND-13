@@ -10,6 +10,8 @@ Implementations notes:
 
 ­ - Apply game rules for both options (use if/else if structures)
 
+ - We can have multiple games, track the score
+
 Calling “play()” function will display in console something like this:
 Computer choice: “Rock”
 User choice: “Paper”
