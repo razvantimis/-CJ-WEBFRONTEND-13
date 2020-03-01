@@ -5,6 +5,7 @@ const GamePosibility = {
     paper: 'paper',
     scissors: 'scissors'
 }
+const possibilities = [GamePosibility.rock, GamePosibility.paper, GamePosibility.scissors];
 
 function getRandomChoice(possibilities) {
     const index = Math.floor(Math.random() * possibilities.length);
@@ -44,7 +45,6 @@ function getWinner(userChoice, computerChoise) {
     return winner;
 }
 function play() {
-    const possibilities = [GamePosibility.rock, GamePosibility.paper, GamePosibility.scissors];
     const computerChoise = getRandomChoice(possibilities);
     const userChoice = getRandomChoice(possibilities);
 
