@@ -1,6 +1,6 @@
 console.log('Start game')
 
-function game() {
+function initGame() {
     const GamePosibility = {
         rock: 'rock',
         paper: 'paper',
@@ -46,14 +46,10 @@ function game() {
         return winner;
     }
 
-    let score = {
-        user: 0,
-        computer: 0,
-    }
 
-    function play() {
+
+    function play(userChoice, score) {
         const computerChoise = getRandomChoice(possibilities);
-        const userChoice = getRandomChoice(possibilities);
 
         console.log('Computer choice:', computerChoise);
         console.log('User choice:', userChoice);
@@ -67,23 +63,37 @@ function game() {
         }
     }
 
-    for (let index = 0; index < 100; index++) {
-        play();
-    }
-    return score;
+
+    return function (userChoice) {
+        let score = {
+            user: 0,
+            computer: 0,
+        }
+        play(userChoice, score);
+        return score;
+    };
 }
 
-const playButton = document.getElementById('play-button');
-console.log(playButton);
+
 let globalScore = {
     user: 0,
     computer: 0,
 }
+
+const playButton = document.getElementById('play-button');
+
+const playGame = initGame();
+
+
+const inputElement = document.querySelector('input');
+let userChoice = "rock";
+inputElement.addEventListener('input', function (event) {
+    userChoice = event.target.value;
+})
+
 playButton.addEventListener('click', () => {
-    const score = game();
+    const score = playGame(userChoice);
     globalScore.user += score.user;
     globalScore.computer += score.computer;
-    console.log(globalScore)
-
-})
-// game();
+    document.querySelector("p").innerText = `user: ${globalScore.user} computer: ${globalScore.computer}`;
+});
