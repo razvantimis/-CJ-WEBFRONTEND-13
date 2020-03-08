@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.comment-container {
+    width: 200px;
+    padding: 10px;
+}
+
+.comment-container .list-comment {
+    margin-top: 10px
+}
+
+.comment-container .list-comment .comment-box {
+    display: flex;
+    justify-content: start;
+    border: 1px solid red;
+}
