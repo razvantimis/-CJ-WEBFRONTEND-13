@@ -1,4 +1,13 @@
-// scope
+// parameter
+
+function displayComments(comments, color) {
+
+}
+const comments = [];
+const color = "red";
+displayComments(comments, color);
+
+// scope - hosting
 var a = 10;
 function setNumber() {
     var a;
@@ -15,3 +24,5 @@ const makeAdderFn = function (x) {
         return x + y;
     }
 }
+const addFn = makeAdderFn(10);
+console(addFn(5))
