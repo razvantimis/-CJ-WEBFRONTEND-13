@@ -1,8 +1,17 @@
-function Person() {
-    // console.log(this);
-    // this.name = "Alex"
+
+function Comment(id, color) {
+    this.id = id;
+    // this.color = color;
+    this.color = color;
 }
-Object.prototype.name = "Razvan";
-const person1 = new Person();
-console.log(person1)
-console.log(person1.name);
+Comment.prototype.send = function () {
+    console.log(this)
+}
+
+
+
+let com1 = new Comment(1, "blue")
+let com2 = new Comment(2, "red")
+let com3 = new Comment(3, "yellow")
+
+

@@ -1,9 +1,10 @@
 // parameter
 
 function displayComments(comments, color) {
-
+    comments.test = ""
 }
-const comments = [];
+
+const comments = {};
 const color = "red";
 displayComments(comments, color);
 
@@ -12,6 +13,7 @@ var a = 10;
 function setNumber() {
     var a;
     a = 20;
+
 }
 console.log('before a = ', a)
 setNumber()
