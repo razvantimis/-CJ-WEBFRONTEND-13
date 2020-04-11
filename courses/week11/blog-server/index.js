@@ -31,6 +31,8 @@ router.post('/posts', async ctx => {
   ctx.body = post;
 });
 
+
+
 router.delete('/posts/:id', async ctx => {
   const posts = await db.get('posts')
     .remove({ id: ctx.params.id })
@@ -45,6 +47,22 @@ router.put('/posts/:id', async ctx => {
     .write()
   ctx.body = post;
 })
+
+router.post('/posts/:id/comments', async ctx => {
+  const comment = await db.get('comments')
+    .push(ctx.request.body)
+    .last()
+    .assign({ id: Date.now().toString(), postId: ctx.params.id })
+    .write()
+
+  ctx.body = comment;
+});
+
+
+router.get('/posts/:id/comments', async ctx => {
+  const comments = db.getState()['comments'].filter(com => com.postId === ctx.params.id);
+  ctx.body = comments;
+});
 
 
 app

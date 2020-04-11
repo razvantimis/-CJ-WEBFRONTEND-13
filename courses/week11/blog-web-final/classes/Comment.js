@@ -1,6 +1,7 @@
-function Comment(id, user, text) {
+function Comment(id, author, text, date) {
   this.id = id;
-  this.user = user;
+  this.author = author;
+  this.date = date;
   this.text = text;
 }
 
@@ -10,9 +11,17 @@ function Comment(id, user, text) {
 Comment.prototype.render = function () {
   const containerComment = document.createElement('div');
   containerComment.setAttribute("id", this.id)
+  containerComment.classList.add("comment");
   containerComment.innerHTML = `
-    <span>${this.user}</span>
-    <b>${this.text}</b>
+      <div class="comment-header">
+        <p class="comment-author">Author: ${this.author}</p>
+        <p class="comment-date">Date: ${this.date}</p>
+      </div>
+
+      <p class="comment-content">
+        Message: ${this.text}
+      </p>
+    </div>
     `
   return containerComment;
 }
