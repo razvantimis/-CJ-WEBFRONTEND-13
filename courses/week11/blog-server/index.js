@@ -52,7 +52,7 @@ router.post('/posts/:id/comments', async ctx => {
   const comment = await db.get('comments')
     .push(ctx.request.body)
     .last()
-    .assign({ id: Date.now().toString(), postId: ctx.params.id })
+    .assign({ id: Date.now().toString(), postId: ctx.params.id, date: new Date().toLocaleDateString() })
     .write()
 
   ctx.body = comment;

@@ -24,11 +24,178 @@
   ],
   "comments": [
     {
-      "author": "Razvan",
+      "user": "Razvan",
       "text": " Ce faci",
       "date": "12/03/2020",
       "id": "12",
       "postId": "3"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586599213158",
+      "postId": "3"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586599264423",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586599267939",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "razvan",
+      "text": "test",
+      "id": "1586599437266",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "asdas",
+      "text": "sadas",
+      "id": "1586599444412",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "sdfds",
+      "text": "sdfds",
+      "id": "1586599573177",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Ionut",
+      "text": "test",
+      "id": "1586599585029",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Ionut",
+      "text": "sdfds",
+      "id": "1586599600391",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "sdfds",
+      "text": "dsfsd",
+      "id": "1586599666692",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "adas",
+      "text": "asdas",
+      "id": "1586599728963",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Ionut",
+      "text": "test",
+      "id": "1586599739008",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "asdas",
+      "text": "sadas",
+      "id": "1586599770212",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1586599792524",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1586599816347",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1586599820900",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1586599832648",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1586599835805",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "adasdas",
+      "text": "sadas",
+      "id": "1586599846402",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "test",
+      "text": "test",
+      "id": "1586599917953",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "asdsa",
+      "text": "fsdas",
+      "id": "1586600029790",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Ionut",
+      "text": "sdfsd",
+      "id": "1586600067989",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586600097888",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586600100924",
+      "postId": "3",
+      "date": "4/11/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1586600103009",
+      "postId": "3",
+      "date": "4/11/2020"
     }
   ]
 }

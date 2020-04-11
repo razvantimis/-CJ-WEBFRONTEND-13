@@ -1,6 +1,6 @@
-function Comment(id, author, text, date) {
+function Comment(id, user, text, date) {
   this.id = id;
-  this.author = author;
+  this.user = user;
   this.date = date;
   this.text = text;
 }
@@ -14,7 +14,7 @@ Comment.prototype.render = function () {
   containerComment.classList.add("comment");
   containerComment.innerHTML = `
       <div class="comment-header">
-        <p class="comment-author">Author: ${this.author}</p>
+        <p class="comment-user">User: ${this.user}</p>
         <p class="comment-date">Date: ${this.date}</p>
       </div>
 

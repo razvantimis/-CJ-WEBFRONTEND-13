@@ -52,9 +52,14 @@ function initTabs() {
           id="comment-area"
           placeholder="write a comment"
         ></textarea>
-        <button id="comment-submit">Submit</button>
+        <button id="submit">Submit</button>
       </div>
-    `
+    `;
+    tabContentNode.querySelector('.comment-add #submit').addEventListener('click', function (event) {
+      const user = tabContentNode.querySelector('#user-name').value;
+      const text = tabContentNode.querySelector('#comment-area').value;
+      fetchApi.addComment(postId, user, text);
+    })
 
   })
   displayComments(tabContentNode);
