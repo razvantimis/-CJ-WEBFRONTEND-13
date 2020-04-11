@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": "3",
+      "author": "Cosmin",
+      "title": "Eu joc minicraft",
+      "text": "Astazi vom povesti de minicraft...",
+      "date": "12/03/2020"
+    },
+    {
+      "author": "Razvan",
+      "title": "Test",
+      "text": "Ce faci?",
+      "date": "12/03/2020",
+      "id": "1586591053377"
+    },
+    {
+      "author": "Razvan",
+      "title": "Post 2",
+      "text": "Post nou",
+      "date": "12/03/2020",
+      "id": "1586591058449"
+    }
+  ],
+  "comments": {}
+}
