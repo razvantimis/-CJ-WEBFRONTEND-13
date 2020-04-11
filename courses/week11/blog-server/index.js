@@ -7,7 +7,9 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 const bodyParser = require('koa-bodyparser');
+const cors = require('@koa/cors');
 
+app.use(cors());
 app.use(bodyParser());
 
 router.get('/posts', async ctx => {
