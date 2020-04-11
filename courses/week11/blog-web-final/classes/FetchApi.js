@@ -15,3 +15,10 @@ FetchApi.prototype.fetchPosts = async function () {
   }
   return posts;
 }
+
+FetchApi.prototype.fetchPostById = async function (id) {
+  const response = await fetch(`${this.endpoint}/posts/${id}`)
+  const postJson = await response.json();
+  return new Post(postJson.id, postJson.author, postJson.date, postJson.title, postJson.text);
+
+}

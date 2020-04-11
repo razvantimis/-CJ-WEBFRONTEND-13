@@ -10,8 +10,6 @@ function Post(id, author, date, title, text) {
 }
 // creaza reprezentare unei post in HTML
 Post.prototype.display = function () {
-
-
   const containerListComment = document.createElement('div');
   containerListComment.classList.add('comment-list')
 
@@ -28,8 +26,13 @@ Post.prototype.display = function () {
   containerPost.classList.add('post')
 
   containerPost.innerHTML = `
-  <h1>${this.title}</h1>
-  <p> ${this.text}</p>
+  <div class="post-header">
+  <h1 class="post-title">${this.title}</h1>
+      <p class="post-date">${this.date}</p>
+    </div>
+    <p class="post-content">
+      ${this.text}
+    </p >
   `
   containerPost.appendChild(containerListComment)
   return containerPost;
