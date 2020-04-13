@@ -5,9 +5,29 @@ const postId = window.location.search.substring(4, 10)
 //2. facem request la server ca sa aducem post dupa id luat
 const fetchApi = new FetchApi('http://localhost:3000');
 
+
+async function sendComment() {
+  const userName = document.getElementById('user-name').value;
+  const commentText = document.getElementById('comment-text').value;
+  const comment = await fetchApi.addComment(postId, userName, commentText);
+
+  console.log(comment);
+
+  const containerComments = document.querySelector('.comment-list');
+  const commentDOM = comment.render();
+  containerComments.appendChild(commentDOM);
+
+
+}
+
+document
+  .getElementById('comment-send')
+  .addEventListener('click', sendComment)
+
 // async await
 async function displaySinglePost() {
   const postServer = await fetchApi.getPostById(postId);
+
 
   // convertim post de la server la Post de pe front
   const post = new Post(
@@ -18,6 +38,14 @@ async function displaySinglePost() {
     postServer.text
   );
 
+  // aducem commentarile 
+  const comments = await fetchApi.getCommentsByPostId(postId);
+
+  for (let idx = 0; idx < comments.length; idx++) {
+    post.addCommentToList(comments[idx]);
+  }
+
+  //3. Afisam postul
   const postContainer = document.getElementById('post-container');
 
   const postDOM = post.display();
@@ -29,7 +57,7 @@ displaySinglePost();
 
 
 
-// promise
+// promise with callback
 // fetchApi.getPostById(postId).then(function (postServer) {
 
 //   const post = new Post(

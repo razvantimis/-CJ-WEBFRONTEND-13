@@ -1,5 +1,5 @@
 
-function Comment(id, user, text) {
+function MyComment(id, user, text) {
   this.id = id;
   this.user = user;
   this.text = text;
@@ -8,7 +8,7 @@ function Comment(id, user, text) {
 // render nu este nume default, se poate pune orice
 // De exemplu la Post am schimba in display
 // creaza reprezentare unui Comment in html
-Comment.prototype.render = function () {
+MyComment.prototype.render = function () {
   const containerComment = document.createElement('div');
   containerComment.setAttribute("id", this.id)
   containerComment.innerHTML = `
