@@ -36,6 +36,19 @@ Post.prototype.display = function () {
   return containerPost;
 }
 
+Post.prototype.displayShort = function () {
+
+  const containerPost = document.createElement('div');
+  containerPost.classList.add('post')
+
+  containerPost.innerHTML = `
+    <h1>${this.title}</h1>
+    <p> ${this.text.substring(0, 100)}...</p>
+    <a href="./view-post.html">View</a>
+    `
+  return containerPost;
+}
+
 // adauga commentariu in memory
 Post.prototype.addCommentToList = function (comment) {
   this.commentList.push(comment);
