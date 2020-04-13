@@ -1,8 +1,8 @@
 // post, comment
 // aici cream un obiect cu ajutorul clasei Post
 
-const fetchApi = new FetchApi('http://localhost:3000')
-fetchApi.getPosts().then(function (postsServer) {
+
+function displayPosts(postsServer) {
   const listPost = [];
   for (let i = 0; i < postsServer.length; i++) {
     const postServer = postsServer[i];
@@ -11,7 +11,9 @@ fetchApi.getPosts().then(function (postsServer) {
       postServer.author,
       postServer.date,
       postServer.title,
-      postServer.text)
+      postServer.text
+    );
+
     listPost.push(post)
   }
 
@@ -22,5 +24,8 @@ fetchApi.getPosts().then(function (postsServer) {
     const postNode = listPost[i].displayShort();
     document.getElementById('listOfPost').appendChild(postNode);
   }
-});
+}
+const fetchApi = new FetchApi('http://localhost:3000')
+
+fetchApi.getPosts().then(displayPosts);
 

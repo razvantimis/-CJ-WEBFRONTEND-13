@@ -10,8 +10,6 @@ function Post(id, author, date, title, text) {
 }
 // creaza reprezentare unei post in HTML
 Post.prototype.display = function () {
-
-
   const containerListComment = document.createElement('div');
   containerListComment.classList.add('comment-list')
 
@@ -21,7 +19,6 @@ Post.prototype.display = function () {
 
     const commentNode = comment.render();
     containerListComment.appendChild(commentNode);
-
   }
 
   const containerPost = document.createElement('div');
@@ -30,21 +27,21 @@ Post.prototype.display = function () {
   containerPost.innerHTML = `
     <h1>${this.title}</h1>
     <p> ${this.text}</p>
-    <a href="./view-post.html">View</a>
     `
   containerPost.appendChild(containerListComment)
   return containerPost;
 }
 
+// afisam postul pe prima pagina
 Post.prototype.displayShort = function () {
 
   const containerPost = document.createElement('div');
   containerPost.classList.add('post')
 
   containerPost.innerHTML = `
-    <h1>${this.title}</h1>
-    <p> ${this.text.substring(0, 100)}...</p>
-    <a href="./view-post.html">View</a>
+  <h1>${this.title}</h1>
+  <p> ${this.text.substring(0, 100)}...</p>
+  <a href="./view-post.html?id=${this.id}">View</a>
     `
   return containerPost;
 }
