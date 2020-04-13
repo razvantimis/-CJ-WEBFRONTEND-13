@@ -30,6 +30,7 @@ Post.prototype.display = function () {
   containerPost.innerHTML = `
     <h1>${this.title}</h1>
     <p> ${this.text}</p>
+    <a href="./view-post.html">View</a>
     `
   containerPost.appendChild(containerListComment)
   return containerPost;
