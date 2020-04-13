@@ -1,5 +1,6 @@
 // aici cream un obiect cu ajutorul clasei Post
 const fetchApi = new FetchApi('http://localhost:3000')
+
 async function displayPosts() {
 
   const listPost = await fetchApi.fetchPosts();
@@ -12,4 +13,5 @@ async function displayPosts() {
   }
 
 }
+
 displayPosts();

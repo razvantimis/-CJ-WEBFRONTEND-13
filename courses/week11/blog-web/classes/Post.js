@@ -38,6 +38,9 @@ Post.prototype.displayShort = function () {
   const containerPost = document.createElement('div');
   containerPost.classList.add('post')
 
+  // ca sa trimiteti informati, se foloseste query params
+  // key=valoare&key2=valoare2...
+  // valoare este string
   containerPost.innerHTML = `
   <h1>${this.title}</h1>
   <p> ${this.text.substring(0, 100)}...</p>

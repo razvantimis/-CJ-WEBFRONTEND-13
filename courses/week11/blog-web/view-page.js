@@ -12,7 +12,7 @@ async function sendComment() {
   const comment = await fetchApi.addComment(postId, userName, commentText);
 
   console.log(comment);
-
+  // afisam commentul in HTML
   const containerComments = document.querySelector('.comment-list');
   const commentDOM = comment.render();
   containerComments.appendChild(commentDOM);
@@ -20,11 +20,12 @@ async function sendComment() {
 
 }
 
-document
-  .getElementById('comment-send')
-  .addEventListener('click', sendComment)
+const buttonSend = document.getElementById('comment-send');
+
+buttonSend.addEventListener('click', sendComment);
 
 // async await
+// afiseaza postul cu commentarile lui
 async function displaySinglePost() {
   const postServer = await fetchApi.getPostById(postId);
 
@@ -42,6 +43,7 @@ async function displaySinglePost() {
   const comments = await fetchApi.getCommentsByPostId(postId);
 
   for (let idx = 0; idx < comments.length; idx++) {
+    // fiecare comment la post
     post.addCommentToList(comments[idx]);
   }
 
