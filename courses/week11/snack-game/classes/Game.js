@@ -24,15 +24,16 @@ Game.prototype.runSnake = function (food, map) {
     const maxY = map.offsetHeight / self.snake.height;
     const headX = self.snake.body[0].x;
     const headY = self.snake.body[0].y;
+
     if (headX >= maxX || headX < 0) {
       clearInterval(timerId);
       alert('Game over');
     }
     if (headY < 0 || headY >= maxY) {
       clearInterval(timerId);
-      alert('Game over ');
+      alert('Game over');
     }
-  }, 550)
+  }, 150)
 }
 
 Game.prototype.bindKey = function () {

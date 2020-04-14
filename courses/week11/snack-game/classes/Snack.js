@@ -24,17 +24,19 @@ function Snake(width, height, direction) {
 
 Snake.prototype.init = function (map) {
   this.remove();
-  for (var i = 0; i < this.body.length; i++) {
-    var obj = this.body[i];
+  
+  for (let i = 0; i < this.body.length; i++) {
+    const obj = this.body[i];
 
-    var div = document.createElement('div');
-    map.appendChild(div);
+    const div = document.createElement('div');
     div.style.position = 'absolute';
     div.style.width = this.width + 'px';
     div.style.height = this.height + 'px';
     div.style.left = obj.x * this.width + 'px';
     div.style.top = obj.y * this.height + 'px';
     div.style.backgroundColor = obj.color;
+
+    map.appendChild(div);
     this.bodyPartsDom.push(div);
   }
 }

@@ -4,16 +4,14 @@ function Food(x, y, width, height, color) {
   this.width = width || 20;
   this.height = height || 20;
   this.color = color || 'green';
-
-  this.foodsDom;
 }
 
 Food.prototype.init = function (map) {
   if(this.foodDom){
     this.foodDom.remove();
   }
-  var div = document.createElement('div');
-  map.appendChild(div);
+
+  const div = document.createElement('div');
   div.style.width = this.width + 'px';
   div.style.height = this.height + 'px';
   div.style.backgroundColor = this.color;
@@ -24,6 +22,9 @@ Food.prototype.init = function (map) {
 
   div.style.left = this.x + 'px';
   div.style.top = this.y + 'px';
+
+  map.appendChild(div);
+
 
   this.foodDom = div;
 }
