@@ -53,3 +53,7 @@ Post.prototype.displayShort = function () {
 Post.prototype.addCommentToList = function (comment) {
   this.commentList.push(comment);
 }
+
+function PostWithComment() {
+
+}
