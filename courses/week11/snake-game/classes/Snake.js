@@ -24,7 +24,7 @@ function Snake(width, height, direction) {
 
 Snake.prototype.init = function (map) {
   this.remove();
-  
+
   for (let i = 0; i < this.body.length; i++) {
     const obj = this.body[i];
 

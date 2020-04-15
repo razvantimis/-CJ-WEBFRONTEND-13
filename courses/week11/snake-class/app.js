@@ -1,7 +1,7 @@
 // sa facem un patrat sa se miste pe ecran
 
 
-function Snack(width, height, color, containerMap) {
+function Snake(width, height, color, containerMap) {
   this.width = width;
   this.height = height;
   this.containerMap = containerMap;
@@ -20,7 +20,7 @@ function Snack(width, height, color, containerMap) {
   ];
 }
 
-Snack.prototype.run = function () {
+Snake.prototype.run = function () {
 
   const self = this;
   setInterval(function () {
@@ -48,8 +48,8 @@ Snack.prototype.run = function () {
 
   }, 1000);
 }
-
-Snack.prototype.render = function () {
+// aici afisam Snake-ul nostru
+Snake.prototype.render = function () {
   // remove all part
   // for (let idx = 0; idx < this.body.length; idx++) {
   //   const domPart = this.body[idx].domPart;
@@ -64,14 +64,14 @@ Snack.prototype.render = function () {
     const x = this.body[idx].x;
     const y = this.body[idx].y;
 
-    const domPart = Snack.renderBodyPart(this.width, this.height, color, x, y);
+    const domPart = Snake.renderBodyPart(this.width, this.height, color, x, y);
     // this.body[idx].domPart = domPart;
 
     this.containerMap.appendChild(domPart);
   }
 }
-
-Snack.renderBodyPart = function (width, height, color, x, y) {
+// avem o functie statica, este o functie normala doar ca este atasata de Snack
+Snake.renderBodyPart = function (width, height, color, x, y) {
   const div = document.createElement('div');
   div.style.width = `${width}px`;
   div.style.height = `${height}px`;
@@ -84,7 +84,7 @@ Snack.renderBodyPart = function (width, height, color, x, y) {
 }
 
 // ascultam la eventul de keypress pentru a putea schimba directia sarpelui
-Snack.prototype.bindKey = function () {
+Snake.prototype.bindKey = function () {
   const self = this;
 
   document.addEventListener('keyup', function (event) {
@@ -109,7 +109,7 @@ Snack.prototype.bindKey = function () {
 }
 // aici luam div-ul pentru a pune fiecare parte din sarpe in el
 const containerMap = document.querySelector('.container-map')
-const snack = new Snack(20, 20, 'green', containerMap);
+const snack = new Snake(20, 20, 'green', containerMap);
 
 snack.run();
 snack.bindKey();
