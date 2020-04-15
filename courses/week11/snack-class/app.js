@@ -83,6 +83,7 @@ Snack.renderBodyPart = function (width, height, color, x, y) {
   return div;
 }
 
+// ascultam la eventul de keypress pentru a putea schimba directia sarpelui
 Snack.prototype.bindKey = function () {
   const self = this;
 
