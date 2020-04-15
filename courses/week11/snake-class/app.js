@@ -1,6 +1,3 @@
-// sa facem un patrat sa se miste pe ecran
-
-
 function Snake(width, height, color, containerMap) {
   this.width = width;
   this.height = height;
@@ -20,6 +17,7 @@ function Snake(width, height, color, containerMap) {
   ];
 }
 
+// facem ca snake-ul nostra sa se miste
 Snake.prototype.run = function () {
 
   const self = this;
@@ -48,7 +46,7 @@ Snake.prototype.run = function () {
 
   }, 1000);
 }
-// aici afisam Snake-ul nostru
+// aici afisam Snake-ul nostru, sunt mai multe div-uri
 Snake.prototype.render = function () {
   // remove all part
   // for (let idx = 0; idx < this.body.length; idx++) {
