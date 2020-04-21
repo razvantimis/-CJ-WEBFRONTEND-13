@@ -46,7 +46,7 @@ Snake.prototype.remove = function () {
     this.bodyPartsDom[idx].remove();
   }
 }
-Snake.prototype.move = function (foods, map) {
+Snake.prototype.move = function (foods, map, catchFood) {
   var i = this.body.length - 1;
   for (; i > 0; i--) {
     this.body[i].x = this.body[i - 1].x;
@@ -80,6 +80,7 @@ Snake.prototype.move = function (foods, map) {
         color: last.color
       });
       food.init(map);
+      catchFood();
     }
   }
 }

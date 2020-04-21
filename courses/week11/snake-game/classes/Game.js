@@ -3,6 +3,8 @@ function Game(containerDOM) {
   this.pizza = new Pizza();
   this.snake = new Snake();
   this.map = containerDOM;
+  this.speed = 150;
+  this.score = 0;
 }
 
 Game.prototype.init = function () {
@@ -13,13 +15,21 @@ Game.prototype.init = function () {
 
   this.bindKey();
   this.runSnake([this.food, this.pizza], this.map);
-
+  this.showScore(this.score);
 }
 
 Game.prototype.runSnake = function (foods, map) {
   const self = this;
   const timerId = setInterval(function () {
-    self.snake.move(foods, map);
+    self.snake.move(foods, map, function () {
+      self.speed -= 10;
+      clearInterval(timerId);
+      self.runSnake([self.food, self.pizza], self.map);
+
+      self.score += 1;
+      self.showScore(self.score);
+
+    });
     self.snake.init(map);
 
     const maxX = map.offsetWidth / self.snake.width;
@@ -35,7 +45,26 @@ Game.prototype.runSnake = function (foods, map) {
       clearInterval(timerId);
       alert('Game over');
     }
-  }, 150)
+  }, this.speed)
+}
+
+Game.prototype.showScore = function () {
+
+  const existScore = document.querySelector('.score');
+  if (existScore) {
+    existScore.innerText = `Score: ${this.score}`;
+  } else {
+    const div = document.createElement('div');
+    div.classList.add('score')
+    div.style.position = 'absolute';
+    div.style.fontSize = '25px';
+    div.innerText = `Score: ${this.score}`;
+
+    this.map.appendChild(div);
+
+  }
+
+
 }
 
 Game.prototype.bindKey = function () {
