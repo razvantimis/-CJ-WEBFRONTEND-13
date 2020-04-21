@@ -1,23 +1,25 @@
-function Game(containerDOM){
-  this.food = new Food(); // 食物对象
-  this.snake = new Snake(); //小蛇对象
+function Game(containerDOM) {
+  this.food = new Food();
+  this.pizza = new Pizza();
+  this.snake = new Snake();
   this.map = containerDOM;
 }
 
 Game.prototype.init = function () {
- 
+
   this.food.init(this.map);
+  this.pizza.init(this.map);
   this.snake.init(this.map);
 
   this.bindKey();
-  this.runSnake(this.food, this.map);
+  this.runSnake([this.food, this.pizza], this.map);
 
 }
 
-Game.prototype.runSnake = function (food, map) {
+Game.prototype.runSnake = function (foods, map) {
   const self = this;
   const timerId = setInterval(function () {
-    self.snake.move(food, map);
+    self.snake.move(foods, map);
     self.snake.init(map);
 
     const maxX = map.offsetWidth / self.snake.width;

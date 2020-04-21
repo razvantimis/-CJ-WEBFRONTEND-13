@@ -46,7 +46,7 @@ Snake.prototype.remove = function () {
     this.bodyPartsDom[idx].remove();
   }
 }
-Snake.prototype.move = function (food, map) {
+Snake.prototype.move = function (foods, map) {
   var i = this.body.length - 1;
   for (; i > 0; i--) {
     this.body[i].x = this.body[i - 1].x;
@@ -70,13 +70,16 @@ Snake.prototype.move = function (food, map) {
   var headX = this.body[0].x * this.width;
   var headY = this.body[0].y * this.height;
 
-  if (headX === food.x && headY === food.y) {
-    var last = this.body[this.body.length - 1];
-    this.body.push({
-      x: last.x,
-      y: last.y,
-      color: last.color
-    });
-    food.init(map);
+  for (let index = 0; index < foods.length; index++) {
+    const food = foods[index];
+    if (headX === food.x && headY === food.y) {
+      var last = this.body[this.body.length - 1];
+      this.body.push({
+        x: last.x,
+        y: last.y,
+        color: last.color
+      });
+      food.init(map);
+    }
   }
 }

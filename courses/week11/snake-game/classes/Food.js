@@ -7,7 +7,7 @@ function Food(x, y, width, height, color) {
 }
 
 Food.prototype.init = function (map) {
-  if(this.foodDom){
+  if (this.foodDom) {
     this.foodDom.remove();
   }
 
@@ -15,7 +15,7 @@ Food.prototype.init = function (map) {
   div.style.width = this.width + 'px';
   div.style.height = this.height + 'px';
   div.style.backgroundColor = this.color;
- 
+
   div.style.position = 'absolute';
   this.x = parseInt(Math.random() * (map.offsetWidth / this.width)) * this.width;
   this.y = parseInt(Math.random() * (map.offsetHeight / this.height)) * this.height;
@@ -27,4 +27,20 @@ Food.prototype.init = function (map) {
 
 
   this.foodDom = div;
+}
+
+function Pizza(x, y, width, height, color) {
+  Food.call(this, x, y, width, height, color)
+}
+
+
+Pizza.prototype.init = function (map) {
+  Food.prototype.init.call(this, map);
+
+  const img = document.createElement('img');
+  img.src = "https://toppng.com/public/uploads/preview/slice-sticker-just-stickers-pizza-slice-cartoon-11562909292fb4udrqmoe.png";
+  img.width = this.width;
+  img.style.backgroundColor = "#ccc"
+
+  this.foodDom.appendChild(img);
 }
