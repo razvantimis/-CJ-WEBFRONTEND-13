@@ -8,18 +8,17 @@ Animal.prototype.eat = function () {
 Animal.prototype.move = function () {
   console.log('move')
 }
-function Bird(color, sound) {
 
+function Bird(color, sound) {
   // apelam functia Animal cu contextul 
   Animal.call(this, color);
-
-
-  console.log(this.atac);
   // la fel cu asta
   // this.color = color;
   // this.move = function () {
   //   console.log('move')
   // }
+
+
   this.sound = sound;
 }
 
@@ -53,4 +52,3 @@ const listAnimale = [animal1, bird1]
 for (let idx = 0; idx < listAnimale.length; idx++) {
   listAnimale[idx].move();
 }
-
