@@ -5,15 +5,25 @@ function Snake(width, height, color, containerMap) {
   this.direction = 'down'
   this.body = [
     {
-      x: 10,
+      x: 13,
       y: 10,
       color: 'red'
+    },
+    {
+      x: 13,
+      y: 10,
+      color: color
+    },
+    {
+      x: 12,
+      y: 10,
+      color: color
     },
     {
       x: 11,
       y: 10,
       color: color
-    }
+    },
   ];
 }
 
@@ -23,28 +33,34 @@ Snake.prototype.run = function () {
   const self = this;
   setInterval(function () {
     // facem update la pozitie
-    for (let idx = 0; idx < self.body.length; idx++) {
+
+    // idx - 3, 2, 1
+    for (let idx = self.body.length - 1; idx > 0; idx--) {
       const bodyPart = self.body[idx];
+      const bodyPartNext = self.body[idx - 1];
+      bodyPart.x = bodyPartNext.x;
+      bodyPart.y = bodyPartNext.y;
+    }
 
-      switch (self.direction) {
-        case 'right':
-          bodyPart.y = bodyPart.y + 1
-          break;
-        case 'left':
-          bodyPart.y = bodyPart.y - 1
-          break;
-        case 'down':
-          bodyPart.x = bodyPart.x + 1
-          break;
-        case 'up':
-          bodyPart.x = bodyPart.x - 1
-          break;
+    const headBody = self.body[0];
+    switch (self.direction) {
+      case 'right':
+        headBody.y = headBody.y + 1
+        break;
+      case 'left':
+        headBody.y = headBody.y - 1
+        break;
+      case 'down':
+        headBody.x = headBody.x + 1
+        break;
+      case 'up':
+        headBody.x = headBody.x - 1
+        break;
 
-      }
     }
     self.render();
 
-  }, 1000);
+  }, 300);
 }
 // aici afisam Snake-ul nostru, sunt mai multe div-uri
 Snake.prototype.render = function () {
@@ -100,8 +116,6 @@ Snake.prototype.bindKey = function () {
       case 39: // right
         self.direction = 'right'
         break;
-
-
     }
   })
 }
