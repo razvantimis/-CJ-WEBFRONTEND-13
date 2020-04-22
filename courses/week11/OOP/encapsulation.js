@@ -3,7 +3,7 @@
 // fisier1.js
 var games = ["test"];
 setTimeout(function () {
-  console.log('exemple.js', games)
+  console.log('fisier1.js', games)
 }, 1000);
 
 // fisier2.js
@@ -23,3 +23,6 @@ function startApp() {
   }, 1000);
 }
 startApp();
+
+// fisier2.js
+var games = [2]
