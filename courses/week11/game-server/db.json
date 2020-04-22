@@ -1,3 +1,13 @@
 {
-  "games": []
+  "games": [
+    {
+      "_id": "1",
+      "title": "Call of Duty\u00ae: WWII Returned",
+      "releaseDate": "1333929600",
+      "gender": "First Person Shooter",
+      "publisher": "Activision",
+      "description": "test",
+      "imageUrl": "https:\/\/psmedia.playstation.com\/is\/image\/psmedia\/call-of-duty-wwii-two-column-01-ps4-eu-19apr17?$TwoColumn_Image$"
+    }
+  ]
 }
