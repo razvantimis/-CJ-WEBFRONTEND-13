@@ -2,9 +2,16 @@
 // aici luam div-ul pentru a pune fiecare parte din sarpe in el
 const containerMap = document.querySelector('.container-map')
 
-const snack = new Snake(20, 20, 'green', containerMap);
-const food = new Food(containerMap);
-food.show();
-snack.run();
-snack.bindKey();
+
+document.getElementById('play-again').addEventListener('click', function () {
+  const game = new Game(containerMap);
+  game.start();
+  // sa executi un cod in caz de game over
+  game.addEvent('gameOver', function () {
+
+  });
+
+})
+
+
 
