@@ -50,11 +50,12 @@ Game.prototype.run = function () {
     }
 
     // daca iese din map
-
+    self.gameOverEventFn();
 
   }, self.speed);
 }
 
-Game.prototype.addEvent = function (eventName, eventCallback) {
-
+Game.prototype.addGameOverEvent = function (eventCallback) {
+  // sa salvam pe context - this
+  this.gameOverEventFn = eventCallback;
 }
