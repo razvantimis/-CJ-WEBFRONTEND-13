@@ -17,7 +17,7 @@ router.get('/games', async ctx => {
 });
 
 router.get('/games/:id', async ctx => {
-  ctx.body = db.get('games').find({ id: ctx.params.id });
+  ctx.body = db.get('games').find({ _id: ctx.params.id });
 });
 
 
@@ -25,7 +25,7 @@ router.post('/games', async ctx => {
   const post = await db.get('games')
     .push(ctx.request.body)
     .last()
-    .assign({ id: Date.now().toString() })
+    .assign({ _id: Date.now().toString() })
     .write()
 
   ctx.body = post;
@@ -35,14 +35,14 @@ router.post('/games', async ctx => {
 
 router.delete('/games/:id', async ctx => {
   const posts = await db.get('games')
-    .remove({ id: ctx.params.id })
+    .remove({ _id: ctx.params.id })
     .write()
   ctx.body = posts[0];
 })
 
 router.put('/games/:id', async ctx => {
   const post = await db.get('games')
-    .find({ id: ctx.params.id })
+    .find({ _id: ctx.params.id })
     .assign({ ...ctx.request.body })
     .write()
   ctx.body = post;
