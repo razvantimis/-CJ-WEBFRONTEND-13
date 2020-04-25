@@ -70,13 +70,13 @@ Snake.prototype.move = function () {
       break;
 
   }
-  // apelam  this.render(); care afiseaza partilelor care formeaza snake-ul in DOM
+  // apelam this.render(); care afiseaza partilelor care formeaza snake-ul in DOM
   this.render();
 
 }
 // aici afisam Snake-ul nostru, sunt mai multe div-uri
 Snake.prototype.render = function () {
-  // remove all part
+  // stergem prima data, patile care formau snake-ul vechi
   for (let idx = 0; idx < this.body.length; idx++) {
     const domPart = this.body[idx].domPart;
     if (domPart) {
@@ -84,12 +84,13 @@ Snake.prototype.render = function () {
     }
   }
 
-  // this.containerMap.innerHTML = "";
+  // aici parcurgem fiecare parte din corpul sanke-ului
   for (let idx = 0; idx < this.body.length; idx++) {
     const color = this.body[idx].color;
     const x = this.body[idx].x;
     const y = this.body[idx].y;
 
+    // functia renderBodyPart, este statica, ea se apeleaza folosind Sanke.renderBodyPart
     const domPart = Snake.renderBodyPart(this.width, this.height, color, x, y);
     this.body[idx].domPart = domPart;
 
@@ -98,6 +99,8 @@ Snake.prototype.render = function () {
 }
 // avem o functie statica, este o functie normala doar ca este atasata de Snack
 Snake.renderBodyPart = function (width, height, color, x, y) {
+  // In interior functilor statice nu avem this
+  // Pentru ca nu exista un context
   const div = document.createElement('div');
   div.style.width = `${width}px`;
   div.style.height = `${height}px`;
@@ -114,7 +117,7 @@ Snake.prototype.bindKey = function () {
   const self = this;
 
   document.addEventListener('keyup', function (event) {
-    console.log('ddd', event.keyCode)
+    console.log('event.keyCode', event.keyCode)
     switch (event.keyCode) {
       case 40: // down
         self.direction = 'down'
