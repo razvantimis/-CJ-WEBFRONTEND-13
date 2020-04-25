@@ -1,6 +1,6 @@
 # Snake
-
 Propunere: Ne propunem sa facem un joc de tip snake
+Scopul: Modelarea functionalitatilor jocului folosind conceptele de OOP
 
 Functionalitati: 
 1. Sa avem un snake care se misca intr-un container ( mai multe div-uri cu dimensiuni fixe ), 
