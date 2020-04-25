@@ -21,11 +21,14 @@ Snake
 Food
   - Functionalitatea 4: logica de afisare random pe ecran
 
-Game ( jocul nostre este controlat de acest obiect)
+Game ( jocul nostre este controlat de acest obiect, insemna ca el controleaza interactia dintre snake si food)
 
   - Functionalitatea 2 - folosind setInterval, pentru al face sa miste in continuu
   - Functionalitatea 5
   - Functionalitate 6
   - Functionalitate 7
+
+app.js
+ - Aici facem un obiect Game si apelam start pentru a incepe jocul
 
  
