@@ -6,28 +6,35 @@ function Food(containerMap) {
 }
 
 Food.prototype.show = function () {
-  const div = this.createDiv();
+  // facem mancarea
+  const foodDOM = this.createFoodDOM();
+
+  // obtinem lungimea si inaltimea containarului nostru
   const mapWidth = this.containerMap.getBoundingClientRect().width;
   const mapHeight = this.containerMap.getBoundingClientRect().height;
 
-  const topRandom = Math.floor(Math.random() * mapHeight);
-  const leftRandom = Math.floor(Math.random() * mapWidth);
-  this.top = topRandom;
-  this.left = leftRandom;
+  //  x si y sunt doua cordonate random in interiorul containarului
+  this.x = Math.floor(Math.random() * mapHeight);
+  this.y = Math.floor(Math.random() * mapWidth);
 
-  div.style.position = "absolute";
-  div.style.top = `${topRandom}px`;
-  div.style.left = `${leftRandom}px`;
 
-  this.foodDOM = div;
-  // il adaugam in map
-  this.containerMap.appendChild(div);
+  // setam pozitia absolut cu cordonatele aferente
+  foodDOM.style.position = "absolute";
+  foodDOM.style.top = `${this.x}px`;
+  foodDOM.style.left = `${this.y}px`;
+
+  // salvam pe contextul obiectului, ca mai tarziu sa-l putem sterge, vezi in metoda removeDOM
+  this.foodDOM = foodDOM;
+
+  // il adaugam in containerMap
+  this.containerMap.appendChild(foodDOM);
 }
 
 Food.prototype.removeDOM = function () {
   this.foodDOM.remove();
 }
-Food.prototype.createDiv = function () {
+
+Food.prototype.createFoodDOM = function () {
   const div = document.createElement('div');
   div.style.backgroundColor = this.color;
   div.style.width = `${this.width}px`;
