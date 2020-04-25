@@ -8,10 +8,6 @@ const game = new Game(containerMap);
 // pornim jocul
 game.start();
 
-// // sa executi un cod in caz de game over
-// game.addGameOverEvent(function () {
-//   console.log('game over')
-// });
 
 
 

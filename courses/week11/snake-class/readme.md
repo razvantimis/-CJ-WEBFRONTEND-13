@@ -8,7 +8,7 @@ Functionalitati:
 3. Dorim sa schimbam directia de miscare a snake-ului prin apasarea tastelor - arrow left/right/up/down 
 4. Cand va incepe jocul, va aparea un patrat, pozitionat random in acelasi container cu snake-ul, care reprezinta mancarea - food
 5. Daca snake-ul atinge mancarea, atunci el va creste iar mancarea va aparea in alta parte
-6. De fiecare data cand snake-ul manac, ii va creste viteza cu care deplaseaza pe ecran
+6. De fiecare data cand snake-ul manaca, ii va creste viteza cu care se deplaseaza pe ecran
 7. Gameover - daca iesim din acest container cu snake-ul atunci jocul se termina ( nu este implementat )
 
 Classe: Snake, Game, Food
