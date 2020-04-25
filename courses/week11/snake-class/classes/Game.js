@@ -14,7 +14,7 @@ Game.prototype.start = function () {
   // dam drumul la snake sa se miste continuu folosind setInterval
   this.run();
 
-  // inregistram schimbarea de directie
+  // inregistram logica de schimbare a directie folosind apasarea tastelor arrow up/down/left/right 
   this.snack.bindKey();
 }
 
