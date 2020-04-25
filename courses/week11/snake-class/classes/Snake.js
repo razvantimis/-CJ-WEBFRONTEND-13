@@ -3,9 +3,13 @@ function Snake(width, height, color, containerMap) {
   this.height = height;
   this.containerMap = containerMap;
   this.direction = 'down'
+
+  /* Snake-ul nostru este format din mai multe div-uri 
+     Fiecare find afisat la o pozitie - x si y in containerul nostru
+  */
   this.body = [
     {
-      x: 13,
+      x: 14,
       y: 10,
       color: 'red'
     },
@@ -27,9 +31,17 @@ function Snake(width, height, color, containerMap) {
   ];
 }
 
-// facem ca snake-ul nostra sa se miste
+/* Snake-ul nostra sa se miste, de fiecare daca cand apelam move, 
+   el isi va muta tot corpul in directia care este data in - this.direction -
+*/
 Snake.prototype.move = function () {
-  // idx - 3, 2, 1
+  /*Cum isi mutat corpul?
+   Logica este asa, fiecare partea de corpul lui o va urmari pe cealalta.
+   Iteratile:
+    1. this.body[3] care este { x: 11, y: 10 } va devini this.body[2] = { x: 12, y: 10}
+    2. this.body[2] care este { x: 12, y: 10 } va devini this.body[1] = { x: 13, y: 10}
+    3. this.body[1] care este { x: 13, y: 10 } va devini this.body[0] = { x: 14, y: 10}
+  */
   for (let idx = this.body.length - 1; idx > 0; idx--) {
     const bodyPart = this.body[idx];
     const bodyPartNext = this.body[idx - 1];
@@ -37,6 +49,11 @@ Snake.prototype.move = function () {
     bodyPart.y = bodyPartNext.y;
   }
 
+  /* 
+   Doar capul snake-ului va fi mutat in functie de directia, restul corpului urmareste capul
+   De exemplu: 
+   Daca avem direction = 'down' atunci this.body[0] care este capul va deveni { x: 15, y: 10 }
+  */
   const headBody = this.body[0];
   switch (this.direction) {
     case 'right':
@@ -53,7 +70,7 @@ Snake.prototype.move = function () {
       break;
 
   }
-
+  // apelam  this.render(); care afiseaza partilelor care formeaza snake-ul in DOM
   this.render();
 
 }
