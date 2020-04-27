@@ -15,7 +15,7 @@ function Snake(width, height, direction) {
   {
     x: 1,
     y: 2,
-    color: 'orange' // 身体
+    color: 'orange'
   }
   ];
   this.bodyPartsDom = []
