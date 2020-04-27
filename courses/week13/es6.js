@@ -35,13 +35,13 @@ function run(param1, param2) {
 const fn1 = function () { }
 
 var numeFunctie = () => {
-  console.log(this) // context
+  console.log(this) // preia context-ul de mai sus
   // cod
 }
 
 var returneaza3 = () => 3
 
-// class
+// class - nu se aplica hosting pe clase
 class Food {
   constructor(x, y) {
     this.x = x;
@@ -53,7 +53,7 @@ class Food {
   }
 }
 
-// mostenirea
+// mostenirea cu extends
 class Pizza extends Food {
   constructor(x, size) {
     super(x);
