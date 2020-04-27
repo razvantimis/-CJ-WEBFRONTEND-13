@@ -57,16 +57,16 @@ Snake.prototype.move = function () {
   const headBody = this.body[0];
   switch (this.direction) {
     case 'right':
-      headBody.y = headBody.y + 1
-      break;
-    case 'left':
-      headBody.y = headBody.y - 1
-      break;
-    case 'down':
       headBody.x = headBody.x + 1
       break;
-    case 'up':
+    case 'left':
       headBody.x = headBody.x - 1
+      break;
+    case 'down':
+      headBody.y = headBody.y + 1
+      break;
+    case 'up':
+      headBody.y = headBody.y - 1
       break;
 
   }
@@ -106,8 +106,8 @@ Snake.renderBodyPart = function (width, height, color, x, y) {
   div.style.height = `${height}px`;
   div.style.backgroundColor = color;
   div.style.position = "absolute";
-  div.style.top = `${x * width}px`
-  div.style.left = `${y * height}px`;
+  div.style.top = `${y * width}px`
+  div.style.left = `${x * height}px`;
 
   return div;
 }

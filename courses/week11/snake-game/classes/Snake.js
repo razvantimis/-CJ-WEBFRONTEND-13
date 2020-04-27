@@ -23,7 +23,7 @@ function Snake(width, height, direction) {
 }
 
 Snake.prototype.init = function (map) {
-  this.remove();
+  this.removeBodyParts();
 
   for (let i = 0; i < this.body.length; i++) {
     const obj = this.body[i];
@@ -41,11 +41,13 @@ Snake.prototype.init = function (map) {
   }
 }
 
-Snake.prototype.remove = function () {
+Snake.prototype.removeBodyParts = function () {
   for (let idx = 0; idx < this.bodyPartsDom.length; idx++) {
-    this.bodyPartsDom[idx].remove();
+    const div = this.bodyPartsDom[idx]
+    div.remove();
   }
 }
+
 Snake.prototype.move = function (foods, map, catchFood) {
   var i = this.body.length - 1;
   for (; i > 0; i--) {
