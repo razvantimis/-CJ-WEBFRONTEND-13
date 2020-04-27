@@ -11,8 +11,9 @@ Food.prototype.eat = function () {
   console.log('eat')
 }
 
-function Pizza(ingrediente, cantitate) {
-  Food.call(this, ingrediente, cantitate);
+function Pizza(ingrediente) {
+  Food.call(this, ingrediente);
+  this.size = "xxxl"
 }
 Pizza.prototype = Object.create(Food.prototype)
 

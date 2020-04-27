@@ -31,6 +31,7 @@ Food.prototype.init = function (map) {
 
 function Pizza(x, y, width, height, color) {
   Food.call(this, x, y, width, height, color)
+  this.size = "xxxl"
 }
 
 
