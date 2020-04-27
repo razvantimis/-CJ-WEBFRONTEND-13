@@ -1,13 +1,21 @@
-// un div ( Player ), iar daca apasam arrow up, sa il miscam
+/*
+ Player ( un simplu div ), 
+ iar daca apasam arrow down, sa il miscam in jos
+ */
 class Player {
   constructor() {
     this.div = this.afisare();
     this.miscare();
   }
 
+  // logica de miscare
   miscare() {
     console.log('miscare', this)
     document.addEventListener('keyup', (event) => {
+      // aici avem un arrow function, 
+      // aceste arrow functi sunt speciale pentru
+      // ca copiaza contextul de mai sus 
+      // ( in cazul nostru, this din methoda miscare())
       console.log(this)
       if (event.keyCode === 40) { // key down
         // logica de miscare
@@ -18,6 +26,7 @@ class Player {
     })
   }
 
+  // afisarea div-ului
   afisare() {
     const div = document.createElement('div');
     div.style.width = "20px";
