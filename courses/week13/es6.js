@@ -1,6 +1,4 @@
 // prototype, this
-
-
 // es = ECMAScript
 
 // es6 - 2015
