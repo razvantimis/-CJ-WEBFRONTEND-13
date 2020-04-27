@@ -15,7 +15,7 @@ class Player {
       // aici avem un arrow function, 
       // aceste arrow functi sunt speciale pentru
       // ca copiaza contextul de mai sus 
-      // ( in cazul nostru, this din methoda miscare())
+      // ( in cazul nostru, this din metoda miscare())
       console.log(this)
       if (event.keyCode === 40) { // key down
         // logica de miscare
