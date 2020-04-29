@@ -248,4 +248,5 @@ const age = 23;
 function test() {
 
 }
+// deci intr-un array punem pune orice variabila, valori, functii, obiecte
 const array = [person, age, test, '23', 34, true]
