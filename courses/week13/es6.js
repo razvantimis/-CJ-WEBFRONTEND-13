@@ -1,7 +1,11 @@
-// prototype, this
+// es6 - 2015
+// class
+// let,const
+// arrow function
+
 // es = ECMAScript
 
-// es6 - 2015
+
 
 // hosting se aplica la functii si la var
 console.log(name);

@@ -5,12 +5,12 @@ function Snake(width, height, direction) {
   this.body = [{
     x: 3,
     y: 2,
-    color: 'red' // 头
+    color: 'red'
   },
   {
     x: 2,
     y: 2,
-    color: 'orange' // 身体
+    color: 'orange'
   },
   {
     x: 1,
