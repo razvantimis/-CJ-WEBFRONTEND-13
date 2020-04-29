@@ -3,8 +3,9 @@
  iar daca apasam arrow down, sa il miscam in jos
  */
 class Player {
-  constructor() {
-    this.div = this.afisare();
+  constructor(name) {
+    this.name = name;
+    this.div = Player.afisare();
     this.miscare();
   }
 
@@ -27,14 +28,15 @@ class Player {
   }
 
   // afisarea div-ului
-  afisare() {
+  static afisare() {
     const div = document.createElement('div');
-    div.style.width = "20px";
-    div.style.height = "20px";
-    div.style.backgroundColor = "red";
-    div.style.position = "absolute";
-    div.style.top = "20px"
-    div.style.left = "20px"
+    const { style } = div;
+    style.width = "20px";
+    style.height = "20px";
+    style.backgroundColor = "red";
+    style.position = "absolute";
+    style.top = "20px"
+    style.left = "20px"
 
     document.body.appendChild(div);
 
@@ -43,5 +45,6 @@ class Player {
   }
 }
 
-const player1 = new Player();
+const player1 = new Player('razvan');
+// const player2 = new Player('alex');
 
