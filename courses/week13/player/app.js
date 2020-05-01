@@ -5,7 +5,10 @@
 class Player {
   constructor(name) {
     this.name = name;
-    this.div = Player.afisare();
+    const afisare = Player.returnAfisare();
+
+
+    this.div = afisare();
     this.miscare();
   }
 
@@ -27,6 +30,29 @@ class Player {
     })
   }
 
+  static returnAfisare() {
+    const div = document.createElement('div');
+    const { style } = div;
+
+    function afisare() { // closure { style, div }
+
+      style.width = "20px";
+      style.height = "20px";
+      style.backgroundColor = "red";
+      style.position = "absolute";
+      style.top = "20px"
+      style.left = "20px"
+
+      document.body.appendChild(div);
+
+      return div;
+
+    }
+
+    return afisare;
+
+  }
+
   // afisarea div-ului
   static afisare() {
     const div = document.createElement('div');
@@ -39,6 +65,8 @@ class Player {
     style.left = "20px"
 
     document.body.appendChild(div);
+
+
 
     return div;
 

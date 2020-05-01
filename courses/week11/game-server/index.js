@@ -12,7 +12,14 @@ const cors = require('@koa/cors');
 app.use(cors());
 app.use(bodyParser());
 
+async function sleep(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), ms)
+  })
+}
+
 router.get('/games', async ctx => {
+  await sleep(2000)
   ctx.body = db.get('games')
 });
 
