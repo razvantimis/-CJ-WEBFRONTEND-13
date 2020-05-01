@@ -4,12 +4,12 @@
  */
 class Player {
   constructor() {
-    this.div = Player.afisare();
-    this.miscare();
+    this.div = Player.display();
+    this.move();
   }
 
   // logica de miscare
-  miscare() {
+  move() {
     console.log('miscare', this)
     document.addEventListener('keyup', (event) => {
       // aici avem un arrow function, 
@@ -27,7 +27,7 @@ class Player {
   }
 
   // afisarea div-ului
-  static afisare() {
+  static display() {
     const div = document.createElement('div');
     const { style } = div;
     style.width = "20px";
