@@ -8,11 +8,13 @@ Cerinte:
 3. (obligatoriu) Un player nu poate iesi inafara gameContainer ( de la punctul 1)
 
 4. (optinal) Adaugati abstacole, puneti cateva div-uri ( dimensiuni fixe cu anumita culoare) in gameContainer, pot fi random puse in container. ( cum este Food in cazul Snak-ului facut in clasa)
+
 5. (optional) Player daca intalneste un obstacol, nu poate trece de el
 
 6. (optional) Player sa aiba o proprietate life, care default va avea valoare 100, o afisam deasupra  de Player ( div-ului care reprezinta )
 
-7. (optional) De fiecare data cand Player-ul loveste un obstacol, ii vom scadea 1 punct din viata lui si o secunda viata lui va fi de culoare rosie. Dupa care revenit la culoarea default setata
+7. (optional) De fiecare data cand Player-ul loveste un obstacol, ii vom scadea 1 punct din viata lui 
+  1. o secunda viata lui va fi de culoare rosie. Dupa care revenit la culoarea default setata ( pentru a oferi feedback, utilizatorului care se joaca )
 
 8. (optional) Daca Player-ul ajunge sa aiba viata egal cu zero, atunci resetam jocul.
 
