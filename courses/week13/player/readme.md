@@ -1,7 +1,7 @@
 # Player game
 
 Cerinte:
-1. (obligatoriu) Definiti un container de dimensiuni size ( height: 400, width: 400) unde puteti playerul - il numim gameContainer
+1. (obligatoriu) Definiti un container de dimensiuni fixe ( de exemplu height: 400, width: 400) unde puteti playerul - il numim gameContainer
 
 2. (obligatoriu) Player sa poate misca in toate directile ( momentan este facut doar in jos)
 
