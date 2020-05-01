@@ -19,11 +19,11 @@ Cerinte:
 Sfaturi:
 
 1. In metoda move din clasa Player, se va pune logica de la cerinta 2
-  Daca apasam arrow up, vom face style.top = style.top - 20
-  Daca apasam arrow down, vom face style.top = style.top + 20
-  etc.
+  - Daca apasam arrow up, vom face style.top = style.top - 20
+  - Daca apasam arrow down, vom face style.top = style.top + 20
+  - etc.
 2. Cerinta 3, acolo recomand o metoda playIsOutsideOfContainer(nextTop, nextLeft) care sa returneze true sau false. Daca returneza true atunci nu mai facem update la style.top/left, pe false, facem
 3. Cerinta 5, la fel ca mai sus, facem o metoda care o punem in clasa Game, playerHitObstacle. Recomand sa se faca o clasa Game pentru logica cu obstacole, la fel si pentru obstacole, o clasa Obstacle. Game va avea o lista de obiecte Obstacle si un obiect player. 
 Ca sa facem verificare, aveti doua variante:
- 1. Mutati logica de miscare in Game
- 2. Folositi o functie callback, care o apelati de fiecare data cand user vrea sa miste jocul
+ - Mutati logica de miscare in Game
+ - Folositi o functie callback, care o apelati de fiecare data cand user vrea sa miste jocul
