@@ -1,13 +1,13 @@
 # Player game
 
 Cerinte:
-1. (obligatoriu) Definiti un container de dimensiuni size ( height: 400, width: 400) unde puteti playerul - il numim gameConatiner
+1. (obligatoriu) Definiti un container de dimensiuni size ( height: 400, width: 400) unde puteti playerul - il numim gameContainer
 
 2. (obligatoriu) Player sa poate misca in toate directile ( momentan este facut doar in jos)
 
-3. (obligatoriu) Un player nu poate iesi inafara gameConatiner ( de la punctul 1)
+3. (obligatoriu) Un player nu poate iesi inafara gameContainer ( de la punctul 1)
 
-4. (optinal) Adaugati abstacole, puneti cateva div-uri ( dimensiuni fixe cu anumita culoare) in gameConatiner, pot fi random puse in container. ( cum este Food in cazul Snak-ului facut in clasa)
+4. (optinal) Adaugati abstacole, puneti cateva div-uri ( dimensiuni fixe cu anumita culoare) in gameContainer, pot fi random puse in container. ( cum este Food in cazul Snak-ului facut in clasa)
 5. (optional) Player daca intalneste un obstacol, nu poate trece de el
 
 6. (optional) Player sa aiba o proprietate life, care default va avea valoare 100, o afisam deasupra  de Player ( div-ului care reprezinta )
