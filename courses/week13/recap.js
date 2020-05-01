@@ -204,4 +204,56 @@ print(...[1, 2])
 
 // 1. fiecare functie sa aiba o singura responsabilitate
 // 2. Fiecare event de click le adaugi o singura data
-// 3. Fiecare button cu eventul lui
+// 3. Fiecare button cu eventul lui, in sensul ca aiba o functie
+// de exemplu
+function updateGame(event) {
+
+}
+document.addEventListener('click', updateGame)
+
+
+// exemplu conversie es6
+
+// versiunea 1
+async function displayAllGames() {
+  //getting games from server
+  const gamesFromServer = await fetchApi.getGamesList();
+  //creating an array for storing the game objects
+  const gamesList = [];
+  //iterating through games from server, creating game objects and sending them to the games list array 
+  for (let i = 0; i < gamesFromServer.length; i++) {
+    const gameServer = gamesFromServer[i];
+    const game = new Game(gameServer._id,
+      gameServer.title,
+      gameServer.imageUrl,
+      gameServer.description
+    );
+    gamesList.push(game);
+  }
+  //iterating through games list array and
+  for (let i = 0; i < gamesList.length; i++) {
+    //rendering each game and adding it to the DOM
+    const gameNode = gamesList[i].displayGame();
+
+    const container = document.querySelector('.container');
+    container.appendChild(gameNode);
+  }
+}
+// versiune 2
+async function displayAllGames() {
+  //getting games from server
+  const gamesFromServer = await fetchApi.getGamesList();
+  //creating an array for storing the game objects
+  //iterating through games from server, creating game objects and sending them to the games list array 
+  const gamesList = gamesFromServer.map(gameServer => new Game(gameServer._id,
+    gameServer.title,
+    gameServer.imageUrl,
+    gameServer.description
+  ))
+
+  //iterating through games list array and
+  const gamesDOM = gamesList.map(game => game.displayGame());
+  // add in DOM
+  const container = document.querySelector('.container');
+  gamesDOM.forEach((gameDOM => container.appendChild(gameDOM)));
+}
