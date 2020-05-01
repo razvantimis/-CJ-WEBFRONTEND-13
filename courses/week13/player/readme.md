@@ -18,6 +18,11 @@ Cerinte:
 
 8. (optional) Daca Player-ul ajunge sa aiba viata egal cu zero, atunci resetam jocul.
 
+Observati:
+1. Sa folositi sintaxa noua de ES6
+2. OOP Style
+3. Codul cat mai granular, o singura responsabilitate per functie/metoda, o functie/metoda minim 10 lini de cod ( pot exista excepti dar ca regula de urmat)
+
 Sfaturi:
 
 1. In metoda move din clasa Player, se va pune logica de la cerinta 2
