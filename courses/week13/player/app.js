@@ -3,12 +3,8 @@
  iar daca apasam arrow down, sa il miscam in jos
  */
 class Player {
-  constructor(name) {
-    this.name = name;
-    const afisare = Player.returnAfisare();
-
-
-    this.div = afisare();
+  constructor() {
+    this.div = Player.afisare();
     this.miscare();
   }
 
@@ -28,29 +24,6 @@ class Player {
         console.log('arrow down', this.div.style.top)
       }
     })
-  }
-
-  static returnAfisare() {
-    const div = document.createElement('div');
-    const { style } = div;
-
-    function afisare() { // closure { style, div }
-
-      style.width = "20px";
-      style.height = "20px";
-      style.backgroundColor = "red";
-      style.position = "absolute";
-      style.top = "20px"
-      style.left = "20px"
-
-      document.body.appendChild(div);
-
-      return div;
-
-    }
-
-    return afisare;
-
   }
 
   // afisarea div-ului
@@ -73,6 +46,5 @@ class Player {
   }
 }
 
-const player1 = new Player('razvan');
-// const player2 = new Player('alex');
+const player1 = new Player();
 
