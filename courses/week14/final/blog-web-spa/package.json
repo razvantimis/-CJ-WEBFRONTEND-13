@@ -1,0 +1,14 @@
+{
+  "name": "blog-web-spa",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

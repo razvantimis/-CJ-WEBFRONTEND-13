@@ -59,25 +59,6 @@ displaySinglePost();
 
 
 
-// promise with callback
-// fetchApi.getPostById(postId).then(function (postServer) {
-
-//   const post = new Post(
-//     postServer.id,
-//     postServer.author,
-//     postServer.date,
-//     postServer.title,
-//     postServer.text
-//   );
-
-//   //3. Afisam postul
-//   const postContainer = document.getElementById('post-container');
-
-//   const postDOM = post.display();
-
-//   postContainer.appendChild(postDOM);
-// }
-// );
 
 
 
