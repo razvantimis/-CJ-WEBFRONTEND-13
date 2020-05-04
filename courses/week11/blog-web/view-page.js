@@ -1,7 +1,7 @@
 
 
 //1. prima data luam id din url
-const postId = window.location.search.substring(4, 10)
+const postId = window.location.search.substring(4, 100).trim()
 //2. facem request la server ca sa aducem post dupa id luat
 const fetchApi = new FetchApi('http://localhost:3000');
 
