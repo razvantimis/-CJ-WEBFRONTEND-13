@@ -20,5 +20,21 @@ class FetchApi {
     return posts
   }
 
+  async getPostById(postId) {
+    // 1. facem request la server
+    // 1. sa cautam local
+    const response = await fetch(`${this.baseUrl}/posts/${postId}`, { method: 'GET' });
+    const { author, id, title, text, date } = await response.json(); // {id, title ...}
+
+    return new Post(
+      id,
+      author,
+      title.length == 0 ? "No title" : title,
+      text,
+      date,
+    );
+
+  }
+
 
 }

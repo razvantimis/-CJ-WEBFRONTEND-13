@@ -8,13 +8,18 @@ class Post {
   }
 
   // sa returneze reprezentarea html a unui Post
-  render() {
+  render(isSingle) {
     const containerPost = document.createElement('div');
     containerPost.classList.add('post')
+
+    const linkHTMLString = !isSingle ?
+      `<a href="./view-post.html?id=${this.id}">View</a>`
+      : ''
 
     containerPost.innerHTML = `
       <h1>${this.title}</h1>
       <p> ${this.text}</p>
+      ${linkHTMLString}
       `
     return containerPost;
 
