@@ -11,13 +11,14 @@ class Player {
   // logica de miscare
   move() {
     console.log('miscare', this)
+    // https://keycode.info/ de intrat pentru a testa codurile
     document.addEventListener('keyup', (event) => {
       // aici avem un arrow function, 
       // aceste arrow functi sunt speciale pentru
       // ca copiaza contextul de mai sus 
       // ( in cazul nostru, this din metoda miscare())
       console.log(this)
-      if (event.keyCode === 40) { // key down
+      if (event.keyCode === 40) { // arrow down 
         // logica de miscare
         const oldTop = parseInt(this.div.style.top);
         this.div.style.top = `${oldTop + 20}px`;

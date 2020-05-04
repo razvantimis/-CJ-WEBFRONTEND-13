@@ -14,7 +14,7 @@ const postForm = document.getElementById('postForm');
 
 
 postEditButton.addEventListener('click', function (event) {
-
+  event.preventDefault();
   const newTitle = inputTitle.value;
   // update post
   fetchApi.updatePost(postId,
