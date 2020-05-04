@@ -1,4 +1,4 @@
-# Player game
+# Homework - Player game
 
 Cerinte:
 1. (obligatoriu) Definiti un container de dimensiuni fixe ( de exemplu height: 400, width: 400) unde puteti playerul - il numim gameContainer
