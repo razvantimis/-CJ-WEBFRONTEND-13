@@ -10,6 +10,6 @@ async function displaySinglePost() {
   const postDOM = post.render(true);
 
   containerSinglePost.appendChild(postDOM)
-
 }
+
 displaySinglePost();

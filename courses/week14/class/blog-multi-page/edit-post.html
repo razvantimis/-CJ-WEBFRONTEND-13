@@ -4,11 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Edit Post</title>
 </head>
 
 <body>
+  <header>
+    <a href="./home.html" class="homeBtn">Home</a>
+    <a href="./about.html" class="aboutBtn">About</a>
+  </header>
+  <form>
+    Title: <input type="text" name="title" id="postTitle">
+    <button id="postEditButton" type="submit">Update post</button>
+  </form>
 
+  <script src="./classes/Post.js"></script>
+  <script src="./classes/FetchApi.js"></script>
+  <script src="./edit-post.js"></script>
 </body>
 
 </html>

@@ -36,5 +36,32 @@ class FetchApi {
 
   }
 
+  async updatePost(postId, post) {
+    /*
+      post = {
+        "title": "RazvanTest"
+      }
+    */
+    const response = await fetch(
+      `${this.baseUrl}/posts/${postId}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+      }
+    );
+
+    const postJson = await response.json();
+
+    return new Post(
+      postJson.id,
+      postJson.author,
+      postJson.title.length == 0 ? "No title" : postJson.title,
+      postJson.text,
+      postJson.date,
+    );
+  }
 
 }
