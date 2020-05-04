@@ -12,9 +12,9 @@ class Post {
     const containerPost = document.createElement('div');
     containerPost.classList.add('post')
 
-    const linkHTMLString = !isSingle ?
-      `<a href="./view-post.html?id=${this.id}">View</a>`
-      : ''
+    const linkHTMLString = isSingle ?
+      `<a href="./edit-post.html?id=${this.id}">Edit</a>`
+      : `<a href="./view-post.html?id=${this.id}">View</a>`
 
     containerPost.innerHTML = `
       <h1>${this.title}</h1>

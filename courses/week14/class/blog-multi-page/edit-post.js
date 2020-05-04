@@ -13,7 +13,8 @@ postEditButton.addEventListener('click', function (event) {
   fetchApi.updatePost(postId, {
     title: newTitle
   }).then((post) => {
-    inputTitle.value = post.title;
+    // view-post.html
+    location.href = `./view-post.html?id=${post.id}`;
   })
 });
 
