@@ -4,16 +4,26 @@ const fetchApi = new FetchApi("http://localhost:3000")
 
 const postEditButton = document.getElementById('postEditButton');
 const inputTitle = document.getElementById('postTitle');
+const postForm = document.getElementById('postForm');
+
+// versiune 2
+// postForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   // codul de salvare
+// })
 
 
 postEditButton.addEventListener('click', function (event) {
-  event.preventDefault();
+
   const newTitle = inputTitle.value;
   // update post
-  fetchApi.updatePost(postId, {
-    title: newTitle
-  }).then((post) => {
-    // view-post.html
+  fetchApi.updatePost(postId,
+    {
+      title: newTitle,
+      author: 'razvan'
+    }
+  ).then((post) => {
+    // redirect to view-post.html
     location.href = `./view-post.html?id=${post.id}`;
   })
 });
@@ -24,8 +34,6 @@ async function initSinglePostForm() {
   const post = await fetchApi.getPostById(postId);
   inputTitle.value = post.title;
   // inputTitle.setAttribute('value', post.title)
-
-
 }
 
 initSinglePostForm();
