@@ -22,8 +22,6 @@ class Post {
       ${linkHTMLString}
       `
     return containerPost;
-
-
   }
 }
 
