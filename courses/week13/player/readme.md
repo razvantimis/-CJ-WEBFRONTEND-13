@@ -30,7 +30,7 @@ Sfaturi:
    2. Daca apasam arrow down, vom face style.top = style.top + 20
    3. etc.
 2. Cerinta 3, acolo recomand o metoda playerIsOutsideOfContainer(nextTop, nextLeft) care sa returneze true sau false. Daca returneza true atunci nu mai facem update la style.top/left, pe false, facem
-3. Cerinta 5, la fel ca mai sus, facem o metoda care o punem in clasa Game, playerHitObstacle. Recomand sa se faca o clasa Game pentru logica cu obstacole, la fel si pentru obstacole, o clasa Obstacle. Game va avea o lista de obiecte Obstacle si un obiect player. 
+3. Cerinta 5, la fel ca mai sus, facem o metoda care o punem in clasa Game, playerHitObstacle. Recomand sa se faca o clasa Game pentru logica cu obstacole, la fel si pentru obstacole, o clasa Obstacle. Game va avea o lista de obiecte Obstacle si un obiect player. Avem o lista de obiecte Obstacle, verifici cu fiecare
 Ca sa facem verificare, aveti doua variante:
 
    1. Mutati logica de miscare in Game
