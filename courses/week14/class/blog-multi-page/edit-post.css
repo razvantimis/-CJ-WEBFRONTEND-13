@@ -1,0 +1,12 @@
+#postForm {
+  display: flex;
+  margin: 50px;
+  width: 100px;
+  flex-direction: column;
+
+
+}
+
+#postForm>* {
+  margin-bottom: 10px;
+}

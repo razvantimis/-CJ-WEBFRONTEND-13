@@ -3,7 +3,7 @@
 1. Sa avem paginile html 
   - home.html
   - view-post.html
-  - edit-post.html (doar adminul poate acces ) 
+  - edit-post.html (doar adminul poate accesa ) 
   - about.html
 2. Afisare posturi pe home
 3. Adaugare/Editare/Sterge de post
