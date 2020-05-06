@@ -36,6 +36,7 @@ class FetchApi {
       date,
     );
     /*
+      // le fel ca mai sus, doar ca nu folosim Destructuring
        const postServer = await response.json(); // {id, title ...}
        return new Post(
          postServer.id,
