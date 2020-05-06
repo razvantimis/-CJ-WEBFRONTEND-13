@@ -1,10 +1,5 @@
-import { Header } from './src/Header.js';
-import { HomePage } from './src/HomePage.js'
+import { App } from "./src/App.js";
 
 const appDOM = document.getElementById('app');
-
-const header = new Header(appDOM);
-header.render();
-
-const homePage = new HomePage(appDOM);
-homePage.render();
+const app = new App(appDOM);
+app.render();
