@@ -19,6 +19,41 @@ class FetchApi {
     );
     // 3. returnam
     return posts
+    /*
+      //v2: face la fel ca map
+      const posts = [];
+      for(let idx=0; idx<postsJson.length; idx++){
+        const { author, id, title, text, date } = postsJson[idx];
+
+        const post = new Post(
+                      id,
+                      author,
+                      title,
+                      text,
+                      date,
+                    );
+
+        posts.push(post);
+      }
+      // v3: item = postsJson[idx];
+      // postsJson = [ {id, title, ..}, {id, title, ...}]
+      // item = {id, title, ..}
+
+      const posts = [];
+      postsJson.forEach((item)=> {
+          const post = new Post(
+                      item.id,
+                      item.author,
+                      item.title,
+                      item.text,
+                      item.date,
+                    );
+
+        posts.push(post);
+       })
+
+    */
+
   }
 
   async getPostById(postId) {

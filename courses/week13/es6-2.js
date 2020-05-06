@@ -39,7 +39,8 @@ const arrays = [2, 'razvan', { name: 'alex', age: 23 }, false, null, undefined]
 // })
 
 const newArrays = arrays.map(item => !!item);
-
+// [2, 'razvan', { name: 'alex', age: 23 }, false, null, undefined] 
+// => [ true, true, true, false, ...]
 // 4. Destructuring
 
 // object
