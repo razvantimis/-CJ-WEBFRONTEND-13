@@ -19,6 +19,7 @@ postEditButton.addEventListener('click', function (event) {
   const newTitle = inputTitle.value;
   const newText = inputText.value;
   // update post
+
   fetchApi.updatePost(postId,
     {
       title: newTitle,
