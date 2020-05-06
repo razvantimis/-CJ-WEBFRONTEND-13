@@ -1,3 +1,3 @@
-import { posts, name } from './app.js';
+import { posts } from './app.js';
 
 console.log(posts)
