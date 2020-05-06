@@ -5,7 +5,7 @@ const fetchApi = new FetchApi("http://localhost:3000")
 const postEditButton = document.getElementById('postEditButton');
 const inputTitle = document.getElementById('postTitle');
 const inputText = document.getElementById('postText');
-const postForm = document.getElementById('postForm');
+const postEditForm = document.getElementById('postForm');
 
 // versiune 2
 // postForm.addEventListener('submit', (event) => {
@@ -43,3 +43,33 @@ async function initSinglePostForm() {
 }
 
 initSinglePostForm();
+
+
+// auth logic
+const authForm = document.getElementById('auth');
+
+authForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const inputUsername = document.getElementById('username');
+  const inputPassword = document.getElementById('password');
+  // logica de auth
+  const username = inputUsername.value;
+  const password = inputPassword.value;
+
+  login(username, password)
+
+})
+
+function login(username, password) {
+  const isAuth = username === 'admin' && password === "admin";
+  if (isAuth) {
+    // stergem auth form
+    authForm.remove();
+    // afisam postEditForm
+    postEditForm.style.display = "flex";
+  } else {
+    alert('Username or password are wrong')
+  }
+}
+
+
