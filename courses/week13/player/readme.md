@@ -35,3 +35,9 @@ Ca sa facem verificare, aveti doua variante:
 
    1. Mutati logica de miscare in Game
    2. Folositi o functie callback, care o apelati de fiecare data cand user vrea sa miste Player-ul, asta o trimiteti din Clasa Game catre obiectul player
+
+# Notare
+1. Cerinta 1 - 3p
+2. Cerenta 2 - 3p
+3. Cerenta 3 - 3p
+4. 1p oficiu
