@@ -1,6 +1,7 @@
-const HelloMessage = (props) => {
-  console.log(props)
-  return React.createElement("div", null, "Hello ", props.name);
+class HelloMessage extends React.Component {
+  render() {
+    return React.createElement("div", null, "Hello ", this.props.name);
+  }
 }
 
 const appDOM = document.getElementById('app');
