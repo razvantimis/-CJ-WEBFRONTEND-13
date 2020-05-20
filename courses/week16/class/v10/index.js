@@ -1,16 +1,24 @@
 
 function Post(props) {
+
   const myStyle = {
     marginTop: "10px",
     backgroundColor: "green"
   }
+
+  function handleClick(event) {
+    console.log('click div', event.target)
+    myStyle.backgroundColor = "red"
+  }
+
+
   console.log(props)
 
   return (
     <div
       className="post"
       style={myStyle}
-      onClick={props.onMyClick}
+      onClick={handleClick}
     >
       <h1>{props.title}</h1>
       <p>{props.content.join(' ')}</p>
@@ -19,20 +27,11 @@ function Post(props) {
 }
 
 class App extends React.Component {
-
-  handleClick(event) {
-    console.log('click div', event.target)
-  }
-
   render() {
     const content = ['text1', 'text2']
     return (
       <div>
-        <Post
-          title="title1"
-          content={content}
-          onMyClick={this.handleClick}
-        />
+        <Post title="title1" content={content} />
         <Post title="title2" content={content} />
       </div>
     )
