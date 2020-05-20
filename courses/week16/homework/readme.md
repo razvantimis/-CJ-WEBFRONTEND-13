@@ -6,7 +6,9 @@ Scopul: Sa afisam o lista de jocuri
 3. (optional) Editarea unui Game
 4. (optional) Stergerea unui Game
 
-# Recomandari
+# Recomandari - 
+Gasiti un model in /courses/week16/class/v13/index.js
+
 1. Faceti o componenta App unde tineti lista de games
 2. Folositi state pentru lista de games
 3. Promisul se pune in constructor la componenta App
