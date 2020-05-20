@@ -1,17 +1,17 @@
 const appDOM = document.getElementById('app');
 
 // versiune - react
-// function Post() {
-//   const post1Title = React.createElement('h1', null, "Post1")
-//   const post1Content = React.createElement('p', null, "Text post")
-//   const post1 = React.createElement('div', null, post1Title, post1Content)
-//   return post1
-// }
+function Post() {
+  const post1Title = React.createElement('h1', null, "Post1")
+  const post1Content = React.createElement('p', null, "Text post")
+  const post1 = React.createElement('div', null, post1Title, post1Content)
+  return post1
+}
 
-// const posts = [Post(), Post()]
-// const myApp = React.createElement("div", null, posts);
+const posts = [Post(), Post()]
+const myApp = React.createElement("div", null, posts);
 
-// ReactDOM.render(myApp, appDOM)
+ReactDOM.render(myApp, appDOM)
 
 // versiune dom
 function Post() {
