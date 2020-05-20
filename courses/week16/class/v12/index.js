@@ -1,22 +1,22 @@
 
 class Post extends React.Component {
-
   constructor(props) {
     super(props)
-    this.color = "red"
+    this.state = {
+      color: "red"
+    }
   }
 
   handleClick = (event) => {
     console.log('click div', event.target)
-    this.color = "green";
-    // this.forceUpdate()
-    console.log(this);
+    console.log(this)
+    this.setState({ color: 'green' })
   }
 
   render() {
     const myStyle = {
       marginTop: "10px",
-      backgroundColor: this.color
+      backgroundColor: this.state.color
     }
     return (
       <div
