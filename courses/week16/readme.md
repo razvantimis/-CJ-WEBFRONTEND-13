@@ -10,3 +10,7 @@
 
 # 03
 - cum incepem un proiect nou cu react? 
+- react lifecycle
+
+# 04
+- workshop blog
