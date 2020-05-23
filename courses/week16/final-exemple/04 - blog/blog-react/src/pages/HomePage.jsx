@@ -22,8 +22,8 @@ class HomePage extends React.Component {
     this.displayPosts();
   }
 
-  async displayPosts() {
-    const listPost = await this.fetchApi.fetchPosts();
+  async displayPosts(search) {
+    const listPost = await this.fetchApi.fetchPosts(search);
     this.setState({ posts: listPost })
   }
 
@@ -59,6 +59,11 @@ class HomePage extends React.Component {
     this.displayPosts();
   }
 
+  handleSearch = (event) => {
+    const searchString = event.target.value;
+    this.displayPosts(searchString);
+  }
+
   renderView() {
     const {
       currentView,
@@ -87,6 +92,7 @@ class HomePage extends React.Component {
         return (
           <div>
             <button onClick={this.handleAddButtonClick}>Add post</button>
+            <input placeholder="search post" onChange={this.handleSearch}></input>
             {this.renderPostList()}
           </div>
         )

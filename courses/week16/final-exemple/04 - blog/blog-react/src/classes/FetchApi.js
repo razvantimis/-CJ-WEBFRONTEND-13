@@ -3,8 +3,8 @@ class FetchApi {
     this.apiURL = apiURL;
   }
 
-  async fetchPosts() {
-    const response = await fetch(`${this.apiURL}/posts`);
+  async fetchPosts(search) {
+    const response = await fetch(`${this.apiURL}/posts?search=${search ? search : ''}`);
     const postsJson = await response.json();
     return postsJson;
   }
