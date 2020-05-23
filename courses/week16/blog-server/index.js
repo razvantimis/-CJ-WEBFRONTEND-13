@@ -13,12 +13,16 @@ app.use(cors());
 app.use(bodyParser());
 
 router.get('/posts', async ctx => {
-  const search = ctx.query.search.toLowerCase();
-  const posts = db.get('posts').filter(({ title, text }) => {
+  if (ctx.query.search) {
+    const search = ctx.query.search.toLowerCase();
+    const posts = db.get('posts').filter(({ title, text }) => {
 
-    return title.toLowerCase().includes(search) || text.toLowerCase().includes(search);
-  })
-  ctx.body = posts;
+      return title.toLowerCase().includes(search) || text.toLowerCase().includes(search);
+    })
+    ctx.body = posts;
+  } else {
+    ctx.body = db.get('posts')
+  }
 });
 
 router.get('/posts/:id', async ctx => {
