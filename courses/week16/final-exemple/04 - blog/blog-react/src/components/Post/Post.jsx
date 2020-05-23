@@ -6,13 +6,14 @@ function Post(props) {
   return (
     <div className="single-post">
       <div className="post-header">
-        <h1 className="post-title">{props.title}</h1>
-        <p className="post-date">{props.date}</p>
+        <h1 className="post-title">{props.post.title}</h1>
+        <p className="post-date">{props.post.date}</p>
       </div>
       <p className="post-short-description">
-        {props.text.substring(0, 100)}...
+        {props.post.text.substring(0, 100)}...
       </p >
-      <button onClick={props.onViewButtonClick}>View</button>
+      <button onClick={() => props.onViewButtonClick(props.post)}>View</button>
+      <button onClick={() => props.onEditButtonClick(props.post)}>Edit</button>
     </div>
   )
 }
