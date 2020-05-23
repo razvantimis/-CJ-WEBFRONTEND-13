@@ -13,7 +13,9 @@ app.use(cors());
 app.use(bodyParser());
 
 router.get('/posts', async ctx => {
-  ctx.body = db.get('posts')
+  const posts = db.get('posts').value()
+  console.log(posts, ctx.query)
+  ctx.body = posts;
 });
 
 router.get('/posts/:id', async ctx => {
