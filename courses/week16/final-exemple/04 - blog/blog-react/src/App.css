@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+.header {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  background: white;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  display: flex;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-button {
+  background: #007bff;
+  color: white;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 
+
+
+.post:last-child {
+  border-bottom: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.tabs-container {
+  margin-left: 30px;
+}
+
+.tab-link {
+  margin-right: 5px;
+  padding: 10px 20px;
+  color: black;
+  display: inline-block;
+  background: white;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  text-decoration: none;
+}
+
+.tab-link.is-active {
+  text-decoration: underline;
+  color: #007bff;
+  background-color: #e7e7e7;
+}
+
+
+
+.tab-link:hover {
+  text-decoration: underline;
+  color: #dc446e;
+  background-color: #e7e7e7;
+}
+
+
+
+/* Tab Content */
+/* .tab-content {
+  background-color: #e7e7e7;
+  padding: 20px;
+}
+
+.comment {
+  border: 1px solid lightgray;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.comment-add {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 300px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.comment-add>* {
+  margin-bottom: 10px;
+} */
