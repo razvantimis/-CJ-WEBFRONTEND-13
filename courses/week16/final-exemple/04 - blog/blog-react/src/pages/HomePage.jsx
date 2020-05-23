@@ -1,8 +1,9 @@
 import React from 'react';
 import { FetchApi } from '../classes/FetchApi';
-import { Post } from '../components/Post/Post';
+import { PostShortDescription } from '../components/PostShortDescription/PostShortDescription';
 import { PostViewPage } from './PostViewPage';
 import { PostEditPage } from './PostEditPage';
+import { PostAddPage } from './PostAddPage';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -33,12 +34,29 @@ class HomePage extends React.Component {
     })
   }
 
+  handleAddButtonClick = () => {
+    this.setState({
+      currentView: 'post-add',
+    })
+  }
+
 
   handleEditButtonClick = (post) => {
     this.setState({
       currentView: 'post-edit',
       selectedPost: post
     })
+  }
+
+  handleDeleteButtonClick = (post) => {
+    this.fetchApi.deletePost(post.id).then(() => {
+      this.displayPosts();
+    })
+  }
+
+  handleBack = () => {
+    this.setState({ selectedPost: null, currentView: 'post-list' })
+    this.displayPosts();
   }
 
   renderView() {
@@ -48,24 +66,43 @@ class HomePage extends React.Component {
     } = this.state;
 
     switch (currentView) {
-      case 'post-list':
-        return this.renderPostList();
+
       case 'post-view':
-        return (<PostViewPage post={selectedPost}></PostViewPage>)
+        return (<PostViewPage
+          post={selectedPost}
+          onEditButtonClick={this.handleEditButtonClick}
+          onBack={this.handleBack}
+        ></PostViewPage>)
+      case 'post-add':
+        return (<PostAddPage
+          onBack={this.handleBack}
+        ></PostAddPage>)
       case 'post-edit':
-        return (<PostEditPage post={selectedPost}></PostEditPage>)
+        return (<PostEditPage
+          post={selectedPost}
+          onBack={this.handleBack}
+        ></PostEditPage>)
+      case 'post-list':
+      default:
+        return (
+          <div>
+            <button onClick={this.handleAddButtonClick}>Add post</button>
+            {this.renderPostList()}
+          </div>
+        )
     }
   }
 
   renderPostList() {
     return this.state.posts.map(post => (
-      <Post
+      <PostShortDescription
         key={post.id}
         post={post}
         onViewButtonClick={this.handleViewButtonClick}
         onEditButtonClick={this.handleEditButtonClick}
+        onDeleteButtonClick={this.handleDeleteButtonClick}
       >
-      </Post>
+      </PostShortDescription>
     ))
   }
 

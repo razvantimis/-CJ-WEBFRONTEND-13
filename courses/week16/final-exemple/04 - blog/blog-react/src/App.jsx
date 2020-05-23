@@ -16,10 +16,9 @@ class App extends React.Component {
     const { currentPage } = this.state;
 
     switch (currentPage) {
-      case '#home':
-        return (<HomePage></HomePage>)
       case '#about':
         return (<AboutPage></AboutPage>)
+      case '#home':
       default:
         return (<HomePage></HomePage>)
 
@@ -27,7 +26,6 @@ class App extends React.Component {
   }
 
   handleLinkClick = (event) => {
-    event.persist()
     const { hash } = event.target;
     this.setState({ currentPage: hash })
   }

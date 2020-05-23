@@ -1,7 +1,7 @@
 import React from 'react';
 import { FetchApi } from '../classes/FetchApi';
 
-class PostEditPage extends React.Component {
+class PostAddPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -9,8 +9,8 @@ class PostEditPage extends React.Component {
     this.fetchApi = new FetchApi('http://localhost:3000');
 
     this.state = {
-      postTitle: props.post.title,
-      postText: props.post.text,
+      postTitle: '',
+      postText: '',
     }
   }
 
@@ -27,8 +27,7 @@ class PostEditPage extends React.Component {
   handleSave = (event) => {
     event.preventDefault();
 
-    const { post: { id: postId } } = this.props;
-    this.fetchApi.updatePost(postId, {
+    this.fetchApi.addPost({
       title: this.state.postTitle,
       text: this.state.postText,
     }).then(() => {
@@ -64,4 +63,4 @@ class PostEditPage extends React.Component {
   }
 }
 
-export { PostEditPage }
+export { PostAddPage }

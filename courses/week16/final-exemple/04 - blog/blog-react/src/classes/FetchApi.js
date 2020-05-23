@@ -36,6 +36,44 @@ class FetchApi {
     const commentJson = await response.json();
     return commentJson;
   }
+
+
+  async addPost(post) {
+    const body = JSON.stringify(post);
+    const response = await fetch(`${this.apiURL}/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body
+    });
+    const postJson = await response.json();
+    return postJson;
+  }
+
+  async updatePost(postId, post) {
+    const body = JSON.stringify(post);
+    const response = await fetch(`${this.apiURL}/posts/${postId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body
+    });
+    const postJson = await response.json();
+    return postJson;
+  }
+
+  async deletePost(postId) {
+    const response = await fetch(`${this.apiURL}/posts/${postId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
+    const postJson = await response.json();
+    return postJson;
+  }
 }
 
 export { FetchApi }

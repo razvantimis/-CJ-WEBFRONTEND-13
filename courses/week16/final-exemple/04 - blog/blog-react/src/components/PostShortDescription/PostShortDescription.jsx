@@ -1,7 +1,7 @@
 import React from 'react';
-import './Post.css'
+import './PostShortDescription.css'
 
-function Post(props) {
+function PostShortDescription(props) {
 
   return (
     <div className="single-post">
@@ -14,8 +14,9 @@ function Post(props) {
       </p >
       <button onClick={() => props.onViewButtonClick(props.post)}>View</button>
       <button onClick={() => props.onEditButtonClick(props.post)}>Edit</button>
+      <button onClick={() => props.onDeleteButtonClick(props.post)}>Delete</button>
     </div>
   )
 }
 
-export { Post }
+export { PostShortDescription }
