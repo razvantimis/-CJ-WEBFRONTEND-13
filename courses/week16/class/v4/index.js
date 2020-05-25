@@ -1,6 +1,8 @@
 const appDOM = document.getElementById('app');
 
-function Post() {
+function Post(props) {
+  console.log(props)
+  // props.title = "post3434" , sunt readonly, nu poti modifica
   return (
     <div>
       <h1>Title1</h1>
@@ -14,8 +16,8 @@ function Post() {
 function App() {
   return (
     <div>
-      <Post />
-      <Post />
+      <Post title="post1" />
+      <Post title="post2" />
     </div>
   )
 }
