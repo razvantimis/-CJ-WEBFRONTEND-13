@@ -7,6 +7,16 @@ function Post() {
   const post1 = React.createElement('div', null, post1Title, post1Content)
   return post1
 }
+// versiune jsx
+function Post() {
+  return (
+    <div>
+      <h1>Post1</h1>
+      <p>text post</p>
+    </div>
+  )
+}
+
 
 const posts = [Post(), Post()]
 const myApp = React.createElement("div", null, posts);

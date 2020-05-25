@@ -15,7 +15,7 @@ function Post() {
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="list-posts">
         <Post />
         <Post />
       </div>
