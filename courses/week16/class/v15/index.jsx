@@ -11,9 +11,7 @@ class Post extends React.Component {
     // this.props - noile props 
     // prevProps - props ce erau inaite
     if (prevProps.id !== this.props.id) {
-
     }
-
   }
 
   componentDidMount() {
@@ -33,7 +31,6 @@ class Post extends React.Component {
 
     this.props.onPostClick(this.props.id)
   }
-
 
   render() {
     const myStyle = {
