@@ -1,5 +1,4 @@
 import React from 'react';
-import { debounce } from 'lodash';
 import './App.css';
 
 class App extends React.Component {
@@ -10,6 +9,7 @@ class App extends React.Component {
     this.state = {
       isShow: props.isShow // false
     }
+    // this.fetchApi = new FetchApi();
   }
 
   click = (event) => {
