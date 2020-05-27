@@ -12,8 +12,6 @@ class App extends React.Component {
     }
   }
 
-  componentDidUpdate()
-
   click = (event) => {
     // event.preventDefault();
     console.log('click ')
