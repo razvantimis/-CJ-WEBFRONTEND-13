@@ -8,9 +8,6 @@ async function displayPosts() {
   // lista de div cu postarile
   const postsDOM = posts.map(post => post.render());
 
-  // console.log(postsDOM);
-  // postsDOM.forEach(console.log)
-
   postsDOM.forEach(postDOM => {
     containerPosts.appendChild(postDOM)
   })
