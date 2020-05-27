@@ -1,12 +1,12 @@
 # Personal Blog - ReactJs
-
+# Server - /Users/razvan/workspace/scoalainfo/CJ-WEBFRONTEND-13/courses/week16/blog-server
 # Cerinte
 1. Sa avem paginile  
   - home.html
   - view-post.html
   - edit-post.html (doar adminul poate accesa ) 
   - about.html
-  - login 
+  - login.html
 2. Afisare posturi pe home
 3. Adaugare/Editare/Sterge de post
 4. Cautare dupa posturi

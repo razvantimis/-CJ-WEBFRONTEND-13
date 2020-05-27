@@ -1,4 +1,6 @@
 //1. prima data luam id din url
+
+
 const postId = window.location.search.substring(4, 100).trim()
 const fetchApi = new FetchApi("http://localhost:3000")
 
