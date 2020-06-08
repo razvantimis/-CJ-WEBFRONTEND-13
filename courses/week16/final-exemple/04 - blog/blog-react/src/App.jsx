@@ -1,29 +1,16 @@
 import React from 'react';
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentPage: '#home'
-    }
-  }
 
-  renderPage() {
-
-    const { currentPage } = this.state;
-
-    switch (currentPage) {
-      case '#about':
-        return (<AboutPage></AboutPage>)
-      case '#home':
-      default:
-        return (<HomePage></HomePage>)
-
-    }
-  }
 
   handleLinkClick = (event) => {
     const { hash } = event.target;
@@ -32,17 +19,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="header">
-          <a href="#home" className="header-button" onClick={this.handleLinkClick}>Home</a>
-          <a href="#about" className="header-button" onClick={this.handleLinkClick}>About</a>
-        </header>
+      <Router>
+        <div className="App">
+          <header className="header">
+            <Link to='/home' className="header-button">Home</Link>
+            <Link to='/about' className="header-button">About</Link>
+          </header>
 
-        <div className="app-content">
-          {this.renderPage()}
+          <div className="app-content">
+            <Switch>
+              <Route path="/home">
+                <HomePage />
+              </Route>
+              <Route path="/about">
+                <AboutPage />
+              </Route>
+            </Switch>
+          </div>
         </div>
-
-      </div>
+      </Router>
     );
   }
 }

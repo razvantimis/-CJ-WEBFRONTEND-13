@@ -4,6 +4,11 @@ import { PostShortDescription } from '../components/PostShortDescription/PostSho
 import { PostViewPage } from './PostViewPage';
 import { PostEditPage } from './PostEditPage';
 import { PostAddPage } from './PostAddPage';
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
+import { withRouter } from "react-router";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -29,22 +34,22 @@ class HomePage extends React.Component {
 
   handleViewButtonClick = (post) => {
     this.setState({
-      currentView: 'post-view',
       selectedPost: post
+    }, () => {
+      this.props.history.push('/home/post/view')
     })
   }
 
   handleAddButtonClick = () => {
-    this.setState({
-      currentView: 'post-add',
-    })
+    this.props.history.push('/home/post/add')
   }
 
 
   handleEditButtonClick = (post) => {
     this.setState({
-      currentView: 'post-edit',
       selectedPost: post
+    }, () => {
+      this.props.history.push('/home/post/edit')
     })
   }
 
@@ -55,48 +60,15 @@ class HomePage extends React.Component {
   }
 
   handleBack = () => {
-    this.setState({ selectedPost: null, currentView: 'post-list' })
+    this.props.history.push('/home')
+
+    this.setState({ selectedPost: null })
     this.displayPosts();
   }
 
   handleSearch = (event) => {
     const searchString = event.target.value;
     this.displayPosts(searchString);
-  }
-
-  renderView() {
-    const {
-      currentView,
-      selectedPost
-    } = this.state;
-
-    switch (currentView) {
-
-      case 'post-view':
-        return (<PostViewPage
-          post={selectedPost}
-          onEditButtonClick={this.handleEditButtonClick}
-          onBack={this.handleBack}
-        ></PostViewPage>)
-      case 'post-add':
-        return (<PostAddPage
-          onBack={this.handleBack}
-        ></PostAddPage>)
-      case 'post-edit':
-        return (<PostEditPage
-          post={selectedPost}
-          onBack={this.handleBack}
-        ></PostEditPage>)
-      case 'post-list':
-      default:
-        return (
-          <div>
-            <button onClick={this.handleAddButtonClick}>Add post</button>
-            <input placeholder="search post" onChange={this.handleSearch}></input>
-            {this.renderPostList()}
-          </div>
-        )
-    }
   }
 
   renderPostList() {
@@ -113,12 +85,44 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const { selectedPost } = this.state;
+    console.log(this.props.history)
     return (
       <div style={{ padding: 20 }}>
-        {this.renderView()}
+        <Switch>
+          <Route exact path="/home">
+            <div>
+              <button onClick={this.handleAddButtonClick}>Add post</button>
+              <input placeholder="search post" onChange={this.handleSearch}></input>
+              {this.renderPostList()}
+            </div>
+          </Route>
+          <Route path="/home/post/edit">
+            <PostEditPage
+              post={selectedPost}
+              onBack={this.handleBack}
+            ></PostEditPage>
+          </Route>
+          <Route path="/home/post/add">
+            <PostAddPage
+              onBack={this.handleBack}
+            ></PostAddPage>
+          </Route>
+          <Route path="/home/post/view">
+            <PostViewPage
+              post={selectedPost}
+              onEditButtonClick={this.handleEditButtonClick}
+              onBack={this.handleBack}
+            ></PostViewPage>
+          </Route>
+
+        </Switch>
       </div>
     )
   }
 }
 
-export { HomePage }
+const HomePageWithRouter = withRouter(HomePage)
+export {
+  HomePageWithRouter as HomePage
+}
