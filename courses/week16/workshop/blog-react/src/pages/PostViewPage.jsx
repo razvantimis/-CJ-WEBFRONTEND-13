@@ -13,7 +13,7 @@ function PostViewPage(props) {
 
 export const PostViewPageWithRouter = withRouter(PostViewPage)
 /*
-- API Context
+- React API Context
 - https://reactjs.org/docs/higher-order-components.html
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Location
