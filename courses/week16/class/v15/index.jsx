@@ -112,6 +112,21 @@ class App extends React.Component {
     )
   }
 }
+// {
+//   name: 'app',
+//     children: [
+//       {
+//         name: 'div',
+//         children: [
+//           {
+//             name: 'Post'
+//           }
+//         ]
+//       }
+//     ]
+// }
+
+
 
 const appDOM = document.getElementById('app');
 ReactDOM.render(<App />, appDOM)

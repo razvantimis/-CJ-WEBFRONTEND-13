@@ -13,11 +13,19 @@ class App extends React.Component {
     }
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     const fetchApi = new FetchApi('http://localhost:3000');
-    const posts = await fetchApi.getPosts();
-    console.log(posts);
+    fetchApi.getPosts().then(this.updatePosts)
+  }
+
+  componentWillUnmount() {
+
+  }
+
+  updatePosts = (posts) => {
+    console.log(this)
     this.setState({ posts: posts })
+    console.log(posts);
   }
 
   handleViewButton = (post) => {
@@ -37,12 +45,14 @@ class App extends React.Component {
             <Post
               key={post.id}
               post={post}
+              isAuth={this.state.isAuth}
               onViewButtonClick={this.handleViewButton}
             ></Post>
           )
         })
         return postCmps;
       }
+
       case 'view-post.html': {
         return (
           <div>

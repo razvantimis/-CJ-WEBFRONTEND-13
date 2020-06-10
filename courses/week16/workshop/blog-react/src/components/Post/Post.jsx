@@ -6,7 +6,7 @@ export function Post(props) {
     <button>Edit</button>
   ) : (
       <button
-        onClick={() => props.onViewButtonClick(props.post)}
+        onClick={(event) => props.onViewButtonClick(props.post)}
       >
         View
       </button>
