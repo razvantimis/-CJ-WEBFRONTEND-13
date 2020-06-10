@@ -5,9 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import './App.css';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from "./pages/AboutPage";
+import { PostViewPageWithRouter } from "./pages/PostViewPage";
+import './App.css';
 
 class App extends React.Component {
 
@@ -22,9 +23,13 @@ class App extends React.Component {
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>
-
           <Route path="/about">
             <AboutPage></AboutPage>
+          </Route>
+          <Route path="/post/:id">
+            <PostViewPageWithRouter isAuth="true">
+              my text
+            </PostViewPageWithRouter>
           </Route>
         </Switch>
       </BrowserRouter>
