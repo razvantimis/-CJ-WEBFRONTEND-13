@@ -3,11 +3,11 @@
 Cerinte:
 1. (obligatoriu) Definiti un container de dimensiuni fixe ( de exemplu height: 400, width: 400) unde puteti playerul - il numim gameContainer
 
-2. (obligatoriu) Player sa poate misca in toate directile ( momentan este facut doar in jos)
+2. (obligatoriu) Player sa poate misca in toate directile
 
 3. (obligatoriu) Un player nu poate iesi inafara gameContainer ( de la punctul 1)
 
-4. (optinal) Adaugati abstacole, puneti cateva div-uri ( dimensiuni fixe cu anumita culoare) in gameContainer, pot fi random puse in container. ( cum este Food in cazul Snak-ului facut in clasa)
+4. (optinal) Adaugati abstacole, puneti cateva div-uri ( dimensiuni fixe cu anumita culoare) in gameContainer, pot fi random puse in container.
 
 5. (optional) Player daca intalneste un obstacol, nu poate trece de el
 
